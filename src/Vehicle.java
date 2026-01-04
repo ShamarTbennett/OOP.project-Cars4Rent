@@ -1,3 +1,4 @@
+
 public class Vehicle {
     protected String licenseNum;
     protected String brand;
