@@ -25,15 +25,7 @@ public class Bike extends Vehicle{
         this.numberOfHelmets = other.numberOfHelmets;
     }
 
-    // Getter and Setter
-    public int getNumberOfHelmets() {
-        return numberOfHelmets;
-    }
-    public void setNumberOfHelmets(int numberOfHelmets) {
-        this.numberOfHelmets = numberOfHelmets;
-    }
-
-    public String toString() {
+       public String toString() {
         return "Bike{" +
                 "numberOfHelmets=" + numberOfHelmets +
                 ", licenseNum='" + licenseNum + '\'' +
@@ -50,4 +42,14 @@ public class Bike extends Vehicle{
                 ", ratesPerday=" + ratesPerday +
                 '}';
     }
+    
+    // Getter and Setter
+    public int getNumberOfHelmets() {
+        return numberOfHelmets;
+    }
+    public void setNumberOfHelmets(int numberOfHelmets) {
+        this.numberOfHelmets = numberOfHelmets;
+    }
+
+ 
 }
