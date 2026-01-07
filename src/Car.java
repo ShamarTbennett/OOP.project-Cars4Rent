@@ -11,11 +11,11 @@ public class Car extends Vehicle{
         this.interiortype = "Standard";
     }
     // Primary (Parameterized) Constructor
-    public Car(String licenseNum, String brand, String model, int year,
+    public Car(String licenseNum, String type, String brand, String model, int year,
                String color, double engineSize, String fueltype,
                String transmissiontype, int mileage, int seatCapacity,
                String resntalStatus, int ratesPerday, String interiortype) {
-        super(licenseNum, brand, model, year, color, engineSize, fueltype,
+        super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
         this.interiortype = interiortype;
     }

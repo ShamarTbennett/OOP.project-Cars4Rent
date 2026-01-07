@@ -9,11 +9,11 @@ public class Truck extends Vehicle{
     }
 
     // Primary (Parameterized) Constructor
-    public Truck(String licenseNum, String brand, String model, int year,
+    public Truck(String licenseNum, String type, String brand, String model, int year,
                  String color, double engineSize, String fueltype,
                  String transmissiontype, int mileage, int seatCapacity,
                  String resntalStatus, int ratesPerday, double towingcapacity) {
-        super(licenseNum, brand, model, year, color, engineSize, fueltype,
+        super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
         this.towingcapacity = towingcapacity;
     }
