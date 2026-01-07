@@ -116,6 +116,7 @@ public class Car extends Vehicle{
                 input.nextLine();
             }
         }
+        input.close();
     }
 
 
