@@ -1,6 +1,7 @@
 
 public class Vehicle {
     protected String licenseNum;
+    protected String type;
     protected String brand;
     protected String model;
     protected int year;
@@ -16,6 +17,7 @@ public class Vehicle {
     //default constructor
     public Vehicle(){
         this.licenseNum = "ABCDEF";
+        this.type = "";
         this.brand = "New";
         this.model = "Box";
         this.year = 1818;
@@ -30,12 +32,13 @@ public class Vehicle {
     }
 
     // Primary (Parameterized) Constructor
-    public Vehicle(String licenseNum, String brand, String model, int year,
+    public Vehicle(String licenseNum, String type,String brand, String model, int year,
                    String color, double engineSize, String fueltype,
                    String transmissiontype, int mileage, int seatCapacity,
                    String resntalStatus, int ratesPerday) {
 
         this.licenseNum = licenseNum;
+        this.type = type;
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -52,6 +55,7 @@ public class Vehicle {
     // Copy Constructor
     public Vehicle(Vehicle other) {
         this.licenseNum = other.licenseNum;
+        this.type = other.type;
         this.brand = other.brand;
         this.model = other.model;
         this.year = other.year;
@@ -70,6 +74,7 @@ public class Vehicle {
     public String toString() {
         return "Vehicle {" +
                 "License Number='" + licenseNum + '\'' +
+                "Type=" + type + '\'' +
                 ", Brand='" + brand + '\'' +
                 ", Model='" + model + '\'' +
                 ", Year=" + year +

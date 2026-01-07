@@ -1,4 +1,5 @@
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class Car extends Vehicle{
 
@@ -24,6 +25,18 @@ public class Car extends Vehicle{
         this.interiortype = other.interiortype;
     }
 
+    public void getcarformUser(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter license plate number: ");
+        licenseNum = input.nextLine();
+
+        System.out.println("Enter Car type: ");
+
+
+    }
+
+
+
     public void saveToFile(){
         // Implementation for saving Car details to a file
         try{ 
@@ -32,6 +45,7 @@ public class Car extends Vehicle{
             System.out.println("Error saving to file");
         }
     }
+
 
 
      public String toString() {
