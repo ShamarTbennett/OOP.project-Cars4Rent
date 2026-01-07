@@ -1,4 +1,6 @@
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -118,14 +120,36 @@ public class Car extends Vehicle{
 
 
 
-    public void saveToFile(){
-        // Implementation for saving Car details to a file
-        try{ 
-            FileWriter instreamfile = new FileWriter("Vehicle.txt",true);
-        } catch (Exception e) {
-            System.out.println("Error saving to file");
+   public void saveToFile() {
+   try {
+        File file = new File("Vehicle.txt");
+        boolean writeHeader = !file.exists() || file.length() == 0;
+
+        FileWriter instream = new FileWriter(file, true);
+
+        if (writeHeader) {
+            instream.write("---- VEHICLE RECORDS ----\n");
+            instream.write(
+                "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowing Capacity(kg)\t # Helmets\n"
+            );
         }
+
+
+        String vehicle = licenseNum + "\t" + type + "\t" + brand + "\t" +
+                         model + "\t" + year + "\t" + color + "\t" + engineSize + "\t" +
+                         fueltype + "\t" + transmissiontype + "\t" + mileage + "\t" +
+                         seatCapacity + "\t" + ratesPerday + "\n";
+
+        instream.write(vehicle);
+        instream.close();
+
+        System.out.println("Vehicle saved to file");
+
+    } catch (IOException e) {
+        System.out.println("Could not save vehicle to file");
     }
+}
+
 
 
 
