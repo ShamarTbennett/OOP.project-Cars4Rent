@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 
 public class Car extends Vehicle{
 
@@ -23,15 +24,17 @@ public class Car extends Vehicle{
         this.interiortype = other.interiortype;
     }
 
-    // Getter and Setter
-    public String getInteriortype() {
-        return interiortype;
-    }
-    public void setInteriortype(String interiortype) {
-        this.interiortype = interiortype;
+    public void saveToFile(){
+        // Implementation for saving Car details to a file
+        try{ 
+            FileWriter instreamfile = new FileWriter("Vehicle.txt",true);
+        } catch (Exception e) {
+            System.out.println("Error saving to file");
+        }
     }
 
-    public String toString() {
+
+     public String toString() {
         return "Car{" +
                 "interiortype='" + interiortype + '\'' +
                 ", licenseNum='" + licenseNum + '\'' +
@@ -48,4 +51,13 @@ public class Car extends Vehicle{
                 ", ratesPerday=" + ratesPerday +
                 '}';
     }
+    // Getter and Setter
+    public String getInteriortype() {
+        return interiortype;
+    }
+    public void setInteriortype(String interiortype) {
+        this.interiortype = interiortype;
+    }
+
+   
 }
