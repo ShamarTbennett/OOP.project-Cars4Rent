@@ -16,18 +16,18 @@ public class Vehicle {
 
     //default constructor
     public Vehicle(){
-        this.licenseNum = "ABCDEF";
+        this.licenseNum = "";
         this.type = "";
-        this.brand = "New";
-        this.model = "Box";
+        this.brand = " ";
+        this.model = "";
         this.year = 1818;
-        this.color = "Bergandy";
+        this.color = "";
         this.engineSize = 0.1;
-        this.fueltype = "Gas";
-        this.transmissiontype = "A";
+        this.fueltype = "";
+        this.transmissiontype = "";
         this.mileage = 1000;
         this.seatCapacity = 1;
-        this.resntalStatus = "Available";
+        this.resntalStatus = "";
         this.ratesPerday = 1000;
     }
 

@@ -1,4 +1,5 @@
 import java.io.FileWriter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Car extends Vehicle{
@@ -25,14 +26,94 @@ public class Car extends Vehicle{
         this.interiortype = other.interiortype;
     }
 
-    public void getcarformUser(){
+    public void getCarFromUser() {
         Scanner input = new Scanner(System.in);
+
         System.out.println("Enter license plate number: ");
         licenseNum = input.nextLine();
 
-        System.out.println("Enter Car type: ");
+        System.out.println("Enter vehicle type: ");
+        type = input.nextLine();
 
+        System.out.println("Enter brand: ");
+        brand = input.nextLine();
 
+        System.out.println("Enter model: ");
+        model = input.nextLine();
+
+        // Year
+        while (true) {
+            try {
+                System.out.println("Enter year: ");
+                year = input.nextInt();
+                input.nextLine(); // clear buffer
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Year must be an integer.");
+                input.nextLine();
+            }
+        }
+
+        System.out.println("Enter color: ");
+        color = input.nextLine();
+
+        // Engine Size
+        while (true) {
+            try {
+                System.out.println("Enter engine size: ");
+                engineSize = input.nextDouble();
+                input.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Engine size must be a number.");
+                input.nextLine();
+            }
+        }
+
+        System.out.println("Enter fuel type: ");
+        fueltype = input.nextLine();
+
+        System.out.println("Enter transmission: ");
+        transmissiontype = input.nextLine();
+
+        // Mileage
+        while (true) {
+            try {
+                System.out.println("Enter mileage (km): ");
+                mileage = input.nextInt();
+                input.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Mileage must be an integer.");
+                input.nextLine();
+            }
+        }
+
+        // Seating Capacity
+        while (true) {
+            try {
+                System.out.println("Enter seating capacity: ");
+                seatCapacity = input.nextInt();
+                input.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Seating capacity must be an integer.");
+                input.nextLine();
+            }
+        }
+
+        // Rate Per Day
+        while (true) {
+            try {
+                System.out.println("Enter rate per day: ");
+                ratesPerday = input.nextInt();
+                input.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Rate must be an integer.");
+                input.nextLine();
+            }
+        }
     }
 
 
