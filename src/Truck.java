@@ -18,5 +18,38 @@ public class Truck extends Vehicle{
         this.towingcapacity = towingcapacity;
     }
 
+    // Copy Constructor
+    public Truck(Truck other) {
+        super(other);
+        this.towingcapacity = other.towingcapacity;
+    }
+
+    public String toString() {
+        return "Truck{" +
+                "towingcapacity=" + towingcapacity +
+                ", licenseNum='" + licenseNum + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", color='" + color + '\'' +
+                ", engineSize=" + engineSize +
+                ", fueltype='" + fueltype + '\'' +
+                ", transmissiontype='" + transmissiontype + '\'' +
+                ", mileage=" + mileage +
+                ", seatCapacity=" + seatCapacity +
+                ", resntalStatus='" + resntalStatus + '\'' +
+                ", ratesPerday=" + ratesPerday +
+                '}';
+    }
+
+    // Getter and Setter
+    public double getTowingcapacity() {
+        return towingcapacity;
+    }   
+    public void setTowingcapacity(double towingcapacity) {
+        this.towingcapacity = towingcapacity;
+    }
+
+    
     
 }
