@@ -16,18 +16,18 @@ public class Vehicle {
 
     //default constructor
     public Vehicle(){
-        this.licenseNum = "";
-        this.type = "";
-        this.brand = " ";
-        this.model = "";
+        this.licenseNum = "-";
+        this.type = "-";
+        this.brand = "-";
+        this.model = "-";
         this.year = 1818;
-        this.color = "";
+        this.color = "-";
         this.engineSize = 0.1;
-        this.fueltype = "";
-        this.transmissiontype = "";
+        this.fueltype = "-";
+        this.transmissiontype = "-";
         this.mileage = 1000;
         this.seatCapacity = 1;
-        this.resntalStatus = "";
+        this.resntalStatus = "-";
         this.ratesPerday = 1000;
     }
 

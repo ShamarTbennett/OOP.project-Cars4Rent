@@ -1,0 +1,2 @@
+												------------------- VEHICLE RECORDS -----------------
+License Plate	  Type	  Brand	  Model	 Year	 Color	 EngineSize(L)	 FuelType	 Transmission	 Mileage(km)	 Seats	 RatePerDay($)	 Towing Capacity(kg)	 # Helmets

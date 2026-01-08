@@ -129,14 +129,14 @@ public class Car extends Vehicle{
         FileWriter instream = new FileWriter(file, true);
 
         if (writeHeader) {
-            instream.write("---- VEHICLE RECORDS ----\n");
+            instream.write("\t\t\t\t\t\t\t\t\t\t\t\t------------------- VEHICLE RECORDS -----------------\n");
             instream.write(
-                "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowing Capacity(kg)\t # Helmets\n"
+                "License Plate\t  Type\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t Towing Capacity(kg)\t # Helmets\n"
             );
         }
 
 
-        String vehicle = licenseNum + "\t" + type + "\t" + brand + "\t" +
+        String vehicle = licenseNum + "\t  " + type + "\t" + brand + "\t" +
                          model + "\t" + year + "\t" + color + "\t" + engineSize + "\t" +
                          fueltype + "\t" + transmissiontype + "\t" + mileage + "\t" +
                          seatCapacity + "\t" + ratesPerday + "\n";
