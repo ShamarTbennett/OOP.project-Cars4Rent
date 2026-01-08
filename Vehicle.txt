@@ -1,2 +1,4 @@
 												------------------- VEHICLE RECORDS -----------------
-License Plate	  Type	  Brand	  Model	 Year	 Color	 EngineSize(L)	 FuelType	 Transmission	 Mileage(km)	 Seats	 RatePerDay($)	 Towing Capacity(kg)	 # Helmets
+License Plate	Type	  Brand	  Model	 Year	 Color	 EngineSize(L)	 FuelType	 Transmission	 Mileage(km)	 Seats	 RatePerDay($)	 Towing Capacity(kg)	 # Helmets	 InteriorType 	 Status
+
+7665BG			Car	  	  Honda 	Fit	 2014	 Blue	 1.5	   		  Gas		 CVT			  38941			  5		  11000	Silk	Available

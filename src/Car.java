@@ -17,7 +17,7 @@ public class Car extends Vehicle{
     public Car(String licenseNum, String type, String brand, String model, int year,
                String color, double engineSize, String fueltype,
                String transmissiontype, int mileage, int seatCapacity,
-               String resntalStatus, int ratesPerday, String interiortype) {
+               int ratesPerday, String interiortype, String resntalStatus) {
         super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
         this.interiortype = interiortype;
@@ -131,15 +131,15 @@ public class Car extends Vehicle{
         if (writeHeader) {
             instream.write("\t\t\t\t\t\t\t\t\t\t\t\t------------------- VEHICLE RECORDS -----------------\n");
             instream.write(
-                "License Plate\t  Type\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t Towing Capacity(kg)\t # Helmets\n"
+                "License Plate\tType\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t Towing Capacity(kg)\t # Helmets\t InteriorType \t Status\n"
             );
         }
 
 
-        String vehicle = licenseNum + "\t  " + type + "\t" + brand + "\t" +
-                         model + "\t" + year + "\t" + color + "\t" + engineSize + "\t" +
-                         fueltype + "\t" + transmissiontype + "\t" + mileage + "\t" +
-                         seatCapacity + "\t" + ratesPerday + "\n";
+        String vehicle = licenseNum + "\t\t\t" + type + "\t  \t  " + brand + "\t" +
+                         model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
+                         fueltype + "\t\t " + transmissiontype + "\t\t\t  " + mileage + "\t\t\t  " +
+                         seatCapacity + "\t\t  " + ratesPerday + "\t" + interiortype + "\t" + resntalStatus + "\n";
 
         instream.write(vehicle);
         instream.close();
