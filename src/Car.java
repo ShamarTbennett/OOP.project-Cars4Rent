@@ -139,7 +139,7 @@ public class Car extends Vehicle{
         String vehicle = licenseNum + "\t\t\t" + type + "\t  \t  " + brand + "\t" +
                          model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
                          fueltype + "\t\t " + transmissiontype + "\t\t\t  " + mileage + "\t\t\t  " +
-                         seatCapacity + "\t\t  " + ratesPerday + "\t" + interiortype + "\t" + resntalStatus + "\n";
+                         seatCapacity + "\t\t " + ratesPerday + "\t" + interiortype + "\t" + resntalStatus + "\n";
 
         instream.write(vehicle);
         instream.close();
