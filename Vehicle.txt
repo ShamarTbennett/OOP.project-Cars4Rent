@@ -6,4 +6,4 @@ License Plate	Type	  Brand	    Model    Year	 Color	 EngineSize(L)	 FuelType	 Tr
 8638HS			Car	  	  BMW	    M5	     2019	 Black	 4.4	   		  Gas		 M			      2300			  5		 70000												  Silk			  Available
 4337EB			Car	  	  Mercedes	AMG C63	 2019	 White	 4.0	   		  Diesel	 CVT			  428			  5		 55000												  Silk			  Available
 
-8967PO			Truck	  Toyota	Hilux	 2018	 Orange	 2.4	   		  Diesel	 M			  57542			  3		 25000						 750.0			  Available
+8967PO			Truck	  Toyota	Hilux	 2018	 Orange	 2.4	   		  Diesel	 M				  57542			  3		 25000						 750.0			  Available
