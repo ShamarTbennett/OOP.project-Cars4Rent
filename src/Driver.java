@@ -15,6 +15,14 @@ public class Driver {
 
 
         Truck t = new Truck("8967PO",	"Truck",	"Toyota"	,"Hilux"	,2018	,"Orange",	2.4	,"Diesel"	,"M"	 ,57542 	,3	 ,25000, 	750,  "Available");
-        t.saveToFile();
+        //t.saveToFile();
+        Truck t1 = new Truck("7532CY",	"Truck",	"Ford",	"RangerRaptor"	,2018,	"Blue"	,3.2,	"Diesel",	"A"	, 14731, 	5	, 42000, 	2500,  "Available");
+        t1.saveToFile();
+        Truck t2 = new Truck("3705FN",	"Truck",	"Nissan",	"Navara"	,2018,	"Black"	,2.3,	"Gas",	"A",	 25368, 	3,	 22000, 	3500,  "Available");
+        t2.saveToFile();
+        Truck t3 = new Truck("8594HE"	,"Truck",	"Volkswagen"	,"Amarok",	2019,	"Silver",	2.0,	"Diesel",	"M"	, 13512, 	5	, 38000, 	1154,  "Available");
+        t3.saveToFile();
+        Truck t4 = new Truck("7669BU",	"Truck"	,"Honda",	"Ridgeline"	,2017	,"Black",	3.5,	"Gas",	"A"	, 17821, 	5	, 40000, 	2267,  "Available");
+        t4.saveToFile();
     }
 }
