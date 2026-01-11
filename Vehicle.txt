@@ -11,3 +11,5 @@ License Plate	Type	  Brand	    	Model    		Year	 Color	 EngineSize(L)	 FuelType	
 3705FN			Truck	  Nissan		Navara	 		2018	 Black	 2.3	   		  Gas	 	 A				  25368			  3		 22000			 3500.0												  Available
 8594HE			Truck	  Volkswagen 	Amarok	 		2019	 Silver	 2.0	   		  Diesel	 M				  13512			  5		 38000			 1154.0												  Available
 7669BU			Truck	  Honda	    	Ridgeline	 	2017	 Black	 3.5	   		  Gas	 	 A				  17821			  5		 40000			 2267.0												  Available
+
+7950HI			Bike	  Yamaha		YZFR1			2018	 Blue	 1.0	   		  Gas		 M				  3532			  2		 7000										1						  Available
