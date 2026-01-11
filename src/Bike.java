@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Bike extends Vehicle{
     
     private int numberOfHelmets;
@@ -23,6 +27,35 @@ public class Bike extends Vehicle{
     public Bike(Bike other) {
         super(other);
         this.numberOfHelmets = other.numberOfHelmets;
+    }
+    public void saveToFile() {
+        try {
+                File file = new File("Vehicle.txt");
+                boolean writeHeader = !file.exists() || file.length() == 0;
+
+                FileWriter instream = new FileWriter(file, true);
+
+                if (writeHeader) {
+                    instream.write("\t\t\t\t\t\t\t\t\t\t\t\t------------------- VEHICLE RECORDS -----------------\n");
+                    instream.write(
+                        "License Plate\tType\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t Towing Capacity(kg)\t # Helmets\t InteriorType \t Status\n"
+                    );
+                }
+
+
+                String vehicle = licenseNum + "\t\t\t" + type + "\t  " + brand + "\t" +
+                                model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
+                                fueltype + "\t " + transmissiontype + "\t\t\t\t  " + mileage + "\t\t\t  " +
+                                seatCapacity + "\t\t " + ratesPerday + "\t\t\t " + numberOfHelmets + "\t\t\t\t\t\t\t\t\t\t\t\t  " + resntalStatus + "\n";
+
+                instream.write(vehicle);
+                instream.close();
+
+                System.out.println("Vehicle saved to file");
+
+            } catch (IOException e) {
+                System.out.println("Could not save vehicle to file");
+            }
     }
 
        public String toString() {
