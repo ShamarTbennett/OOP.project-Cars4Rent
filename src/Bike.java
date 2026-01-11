@@ -16,8 +16,8 @@ public class Bike extends Vehicle{
     // Primary (Parameterized) Constructor
     public Bike(String licenseNum, String type, String brand, String model, int year,
                 String color, double engineSize, String fueltype,
-                String transmissiontype, int mileage, int seatCapacity,
-                String resntalStatus, int ratesPerday, int numberOfHelmets) {
+                String transmissiontype, int mileage, int seatCapacity
+               , int ratesPerday, int numberOfHelmets, String resntalStatus) {
         super(licenseNum,type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
         this.numberOfHelmets = numberOfHelmets;

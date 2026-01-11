@@ -14,7 +14,7 @@ public class Driver {
         System.out.println(c.toString());*/
 
 
-        Truck t = new Truck("8967PO",	"Truck",	"Toyota"	,"Hilux"	,2018	,"Orange",	2.4	,"Diesel"	,"M"	 ,57542 	,3	 ,25000, 	750,  "Available");
+        /*Truck t = new Truck("8967PO",	"Truck",	"Toyota"	,"Hilux"	,2018	,"Orange",	2.4	,"Diesel"	,"M"	 ,57542 	,3	 ,25000, 	750,  "Available");
         //t.saveToFile();
         Truck t1 = new Truck("7532CY",	"Truck",	"Ford",	"RangerRaptor"	,2018,	"Blue"	,3.2,	"Diesel",	"A"	, 14731, 	5	, 42000, 	2500,  "Available");
         t1.saveToFile();
@@ -23,6 +23,12 @@ public class Driver {
         Truck t3 = new Truck("8594HE"	,"Truck",	"Volkswagen"	,"Amarok",	2019,	"Silver",	2.0,	"Diesel",	"M"	, 13512, 	5	, 38000, 	1154,  "Available");
         t3.saveToFile();
         Truck t4 = new Truck("7669BU",	"Truck"	,"Honda",	"Ridgeline"	,2017	,"Black",	3.5,	"Gas",	"A"	, 17821, 	5	, 40000, 	2267,  "Available");
-        t4.saveToFile();
+        t4.saveToFile();*/
+    
+
+        Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
+        b.saveToFile();
+
+    
     }
 }
