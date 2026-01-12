@@ -26,8 +26,11 @@ public class Driver {
         t4.saveToFile();*/
     
 
-        Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
-        b.saveToFile();
+        //Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
+        //b.saveToFile();
+
+        Rental rental = new Rental();
+        rental.viewvehicles();
 
     
     }
