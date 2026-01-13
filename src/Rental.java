@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Rental {
+public class Rental extends Vehicle {
 
     public Rental() {
 
@@ -19,6 +19,26 @@ public class Rental {
         try {
             infileStream = new Scanner(new File("Vehicle.txt"));
             while(infileStream.hasNext()){
+            this.licenseNum = infileStream.nextLine();
+            this.type = infileStream.nextLine();
+            this.model = infileStream.nextLine();
+            this.year = infileStream.nextInt();
+
+        }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        infileStream.close();
+    }
+    
+    /*public void viewvehicles(){
+
+        Scanner infileStream = null;
+
+        try {
+            infileStream = new Scanner(new File("Vehicle.txt"));
+            while(infileStream.hasNext()){
             String vehicleDetails = infileStream.nextLine();
             System.out.println(vehicleDetails);
 
@@ -28,7 +48,8 @@ public class Rental {
             e.printStackTrace();
         }
         infileStream.close();
-    }
+    }*/
+
 
     public String toString() {
         return "";
