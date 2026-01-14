@@ -16,9 +16,9 @@ public class Truck extends Vehicle{
     public Truck(String licenseNum, String type, String brand, String model, int year,
                  String color, double engineSize, String fueltype,
                  String transmissiontype, int mileage, int seatCapacity, int ratesPerday, double towingcapacity,
-                 String resntalStatus) {
+                 String rentalStatus) {
         super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
-              transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
+              transmissiontype, mileage, seatCapacity, rentalStatus, ratesPerday);
         this.towingcapacity = towingcapacity;
     }
 
@@ -45,7 +45,7 @@ public class Truck extends Vehicle{
                 String vehicle = licenseNum + "\t\t\t" + type + "\t  " + brand + "\t" +
                                 model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
                                 fueltype + "\t " + transmissiontype + "\t\t\t\t  " + mileage + "\t\t\t  " +
-                                seatCapacity + "\t\t " + ratesPerday + "\t\t\t " + towingcapacity + "\t\t\t\t\t\t\t\t\t\t\t\t  " + resntalStatus + "\n";
+                                seatCapacity + "\t\t " + ratesPerday + "\t\t\t " + towingcapacity + "\t\t\t\t\t\t\t\t\t\t\t\t  " + rentalStatus + "\n";
 
                 instream.write(vehicle);
                 instream.close();
@@ -71,7 +71,7 @@ public class Truck extends Vehicle{
                 ", transmissiontype='" + transmissiontype + '\'' +
                 ", mileage=" + mileage +
                 ", seatCapacity=" + seatCapacity +
-                ", resntalStatus='" + resntalStatus + '\'' +
+                ", rentalStatus='" + rentalStatus + '\'' +
                 ", ratesPerday=" + ratesPerday +
                 '}';
     }

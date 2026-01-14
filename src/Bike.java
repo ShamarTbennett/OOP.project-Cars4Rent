@@ -17,9 +17,9 @@ public class Bike extends Vehicle{
     public Bike(String licenseNum, String type, String brand, String model, int year,
                 String color, double engineSize, String fueltype,
                 String transmissiontype, int mileage, int seatCapacity
-               , int ratesPerday, int numberOfHelmets, String resntalStatus) {
+               , int ratesPerday, int numberOfHelmets, String rentalStatus) {
         super(licenseNum,type, brand, model, year, color, engineSize, fueltype,
-              transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
+              transmissiontype, mileage, seatCapacity, rentalStatus, ratesPerday);
         this.numberOfHelmets = numberOfHelmets;
     }
 
@@ -46,7 +46,7 @@ public class Bike extends Vehicle{
                 String vehicle = licenseNum + "\t\t\t" + type + "\t  " + brand + "\t\t" +
                                 model + "\t\t\t" + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
                                 fueltype + "\t\t " + transmissiontype + "\t\t\t\t  " + mileage + "\t\t\t  " +
-                                seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t" + numberOfHelmets + "\t\t\t\t\t\t  " + resntalStatus + "\n";
+                                seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t" + numberOfHelmets + "\t\t\t\t\t\t  " + rentalStatus + "\n";
 
                 instream.write(vehicle);
                 instream.close();
@@ -71,7 +71,7 @@ public class Bike extends Vehicle{
                 ", transmissiontype='" + transmissiontype + '\'' +
                 ", mileage=" + mileage +
                 ", seatCapacity=" + seatCapacity +
-                ", resntalStatus='" + resntalStatus + '\'' +
+                ", rentalStatus='" + rentalStatus + '\'' +
                 ", ratesPerday=" + ratesPerday +
                 '}';
     }

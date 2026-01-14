@@ -11,7 +11,7 @@ public class Vehicle {
     protected String transmissiontype;
     protected int mileage;
     protected int seatCapacity;
-    protected String resntalStatus;
+    protected String rentalStatus;
     protected int ratesPerday;
 
     //default constructor
@@ -27,7 +27,7 @@ public class Vehicle {
         this.transmissiontype = "";
         this.mileage = 1000;
         this.seatCapacity = 1;
-        this.resntalStatus = "";
+        this.rentalStatus = "";
         this.ratesPerday = 1000;
     }
 
@@ -35,7 +35,7 @@ public class Vehicle {
     public Vehicle(String licenseNum, String type,String brand, String model, int year,
                    String color, double engineSize, String fueltype,
                    String transmissiontype, int mileage, int seatCapacity,
-                   String resntalStatus, int ratesPerday) {
+                   String rentalStatus, int ratesPerday) {
 
         this.licenseNum = licenseNum;
         this.type = type;
@@ -48,7 +48,7 @@ public class Vehicle {
         this.transmissiontype = transmissiontype;
         this.mileage = mileage;
         this.seatCapacity = seatCapacity;
-        this.resntalStatus = resntalStatus;
+        this.rentalStatus = rentalStatus;
         this.ratesPerday = ratesPerday;
     }
 
@@ -65,7 +65,7 @@ public class Vehicle {
         this.transmissiontype = other.transmissiontype;
         this.mileage = other.mileage;
         this.seatCapacity = other.seatCapacity;
-        this.resntalStatus = other.resntalStatus;
+        this.rentalStatus = other.rentalStatus;
         this.ratesPerday = other.ratesPerday;
     }
 
@@ -84,7 +84,7 @@ public class Vehicle {
                 ", Transmission Type='" + transmissiontype + '\'' +
                 ", Mileage=" + mileage +
                 ", Seat Capacity=" + seatCapacity +
-                ", Rental Status='" + resntalStatus + '\'' +
+                ", Rental Status='" + rentalStatus + '\'' +
                 ", Rates Per Day=" + ratesPerday +
                 '}';
     }
@@ -167,11 +167,11 @@ public class Vehicle {
         this.seatCapacity = seatCapacity;
     }
 
-    public String getResntalStatus() {
-        return resntalStatus;
+    public String getrentalStatus() {
+        return rentalStatus;
     }
-    public void setResntalStatus(String resntalStatus) {
-        this.resntalStatus = resntalStatus;
+    public void setrentalStatus(String rentalStatus) {
+        this.rentalStatus = rentalStatus;
     }
 
     public int getRatesPerday() {

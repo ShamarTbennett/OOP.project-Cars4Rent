@@ -17,9 +17,9 @@ public class Car extends Vehicle{
     public Car(String licenseNum, String type, String brand, String model, int year,
                String color, double engineSize, String fueltype,
                String transmissiontype, int mileage, int seatCapacity,
-               int ratesPerday, String interiortype, String resntalStatus) {
+               int ratesPerday, String interiortype, String rentalStatus) {
         super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
-              transmissiontype, mileage, seatCapacity, resntalStatus, ratesPerday);
+              transmissiontype, mileage, seatCapacity, rentalStatus, ratesPerday);
         this.interiortype = interiortype;
     }
     // Copy Constructor
@@ -139,7 +139,7 @@ public class Car extends Vehicle{
             String vehicle = licenseNum + "\t\t\t" + type + "\t  \t  " + brand + "\t" +
                             model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
                             fueltype + "\t\t " + transmissiontype + "\t\t\t  " + mileage + "\t\t\t  " +
-                            seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t\t\t  " + interiortype + "\t\t\t  " + resntalStatus + "\n";
+                            seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t\t\t  " + interiortype + "\t\t\t  " + rentalStatus + "\n";
 
             instream.write(vehicle);
             instream.close();
@@ -167,7 +167,7 @@ public class Car extends Vehicle{
                 ", transmissiontype='" + transmissiontype + '\'' +
                 ", mileage=" + mileage +
                 ", seatCapacity=" + seatCapacity +
-                ", resntalStatus='" + resntalStatus + '\'' +
+                ", rentalStatus='" + rentalStatus + '\'' +
                 ", ratesPerday=" + ratesPerday +
                 '}';
     }
