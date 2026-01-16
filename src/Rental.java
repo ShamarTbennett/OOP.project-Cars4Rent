@@ -59,7 +59,7 @@ public class Rental extends Vehicle {
                 // RESET OPTIONAL FIELDS
                 this.towingCapacity = 0;
                 this.numberOfHelmets = 0;
-                this.interiortype = "N/A";
+                this.interiortype = "None";
 
                 // VEHICLE-SPECIFIC FIELDS
                 if (type.equalsIgnoreCase("Car")) {

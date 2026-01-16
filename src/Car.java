@@ -152,6 +152,29 @@ public class Car extends Vehicle{
     }
 
 
+    public void DisplayAllAvailableCars(){
+
+        try {
+            File file = new File("Vehicle.txt");
+            Scanner fileReader = new Scanner(file);
+
+            System.out.println("\t\t\t\t\t\t------------------- AVAILABLE CARS -----------------");
+            System.out.println(
+                "License Plate\tType\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t InteriorType \t Status"
+            );
+            while (fileReader.hasNextLine()) {
+                String data = fileReader.nextLine();
+                String[] vehicleData = data.split("\t");
+
+                if (vehicleData.length >= 15 && vehicleData[14].trim().equals("Available") && vehicleData[1].trim().equals("Car")) {
+                    System.out.println(data);
+                }
+            };
+            fileReader.close();
+        } catch (IOException e) {
+            System.out.println("Could not read vehicle file");
+        }
+    }
 
 
      public String toString() {
