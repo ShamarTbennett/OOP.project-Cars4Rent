@@ -27,44 +27,63 @@ public class Rental extends Vehicle {
         this.numberOfHelmets = numberOfHelmets;
         this.towingCapacity = towingcapacity;
     }
-public void viewvehicles() {
 
-    try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
+    public void viewvehicles() {
 
-        while (infileStream.hasNext()) {
+        try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
-            this.licenseNum = infileStream.next();
-            this.type = infileStream.next();
-            this.brand = infileStream.next();
-            this.model = infileStream.next();
+            while (infileStream.hasNextLine()) {
+                String line = infileStream.nextLine().trim();
 
-            this.year = infileStream.nextInt();
-            this.color = infileStream.next();
-            this.engineSize = infileStream.nextDouble();
+                if (line.isEmpty()) continue;
 
-            this.fueltype = infileStream.next();
-            this.transmissiontype = infileStream.next();
+                String[] p = line.split("\\s+");
+                int i = 0;
 
-            this.mileage = infileStream.nextInt();
-            this.seatCapacity = infileStream.nextInt();
-            this.ratesPerday = infileStream.nextInt();
+                this.licenseNum = p[i++];
+                this.type = p[i++];
+                this.brand = p[i++];
+                this.model = p[i++];
 
-            this.towingCapacity = infileStream.nextInt();
-            this.numberOfHelmets = infileStream.nextInt();
-            this.interiortype = infileStream.next();
+                this.year = Integer.parseInt(p[i++]);
+                this.color = p[i++];
+                this.engineSize = Double.parseDouble(p[i++]);
 
-            this.rentalStatus = infileStream.next();
+                this.fueltype = p[i++];
+                this.transmissiontype = p[i++];
 
-            System.out.println(toString());
+                this.mileage = Integer.parseInt(p[i++]);
+                this.seatCapacity = Integer.parseInt(p[i++]);
+                this.ratesPerday = Integer.parseInt(p[i++]);
+
+                // RESET OPTIONAL FIELDS
+                this.towingCapacity = 0;
+                this.numberOfHelmets = 0;
+                this.interiortype = "N/A";
+
+                // VEHICLE-SPECIFIC FIELDS
+                if (type.equalsIgnoreCase("Car")) {
+                    this.interiortype = p[i++];
+                }
+                else if (type.equalsIgnoreCase("Truck")) {
+                    this.towingCapacity = (int) Double.parseDouble(p[i++]);
+                }
+                else if (type.equalsIgnoreCase("Bike")) {
+                    this.numberOfHelmets = Integer.parseInt(p[i++]);
+                }
+
+                this.rentalStatus = p[i];
+
+                System.out.println(toString());
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Vehicle.txt not found.");
+        }catch (NumberFormatException e) {
+            System.out.println("Invalid number format in Vehicle.txt.");
+            e.printStackTrace();
         }
-
-    } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt not found.");
-    } catch (NumberFormatException e) {
-        System.out.println("Invalid number format in Vehicle.txt.");
-        e.printStackTrace();
     }
-}
 
    /* public void viewvehicles(){
 
@@ -108,6 +127,7 @@ public void viewvehicles() {
                 "interiortype='" + interiortype + '\'' +
                 ", numberOfHelmets=" + numberOfHelmets +
                 ", towingCapacity=" + towingCapacity +
-                "} " + super.toString();
+                "} " + super.toString() + "\n\n";
+
     }
 }
