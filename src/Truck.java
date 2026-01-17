@@ -61,13 +61,13 @@ public class Truck extends Vehicle{
 
     public void DisplayAllAvailableTrucks() {
 
-    System.out.println("\t\t\t\t     |----------------------------------------------------------|");
-    System.out.println("\t\t\t\t     |------------------ AVAILABLE TRUCKS ----------------------|");
-    System.out.println("\t\t\t\t     |----------------------------------------------------------|");
+    System.out.println("\t\t\t\t\t\t     |----------------------------------------------------------|");
+    System.out.println("\t\t\t\t\t\t     |------------------ AVAILABLE TRUCKS ----------------------|");
+    System.out.println("\t\t\t\t\t\t     |----------------------------------------------------------|");
     System.out.println();
 
     System.out.println(
-        "License Plate\tType\tBrand\tModel\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
+        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
     );
     System.out.println("====================================================================================="
             + "===============================================================================================");
