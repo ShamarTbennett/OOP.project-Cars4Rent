@@ -32,8 +32,12 @@ public class Driver {
         //rental.viewvehicles();
 
         Vehicle v = new Vehicle();
-        v.Display();
+        //v.Display();
         //System.out.println(v.toString());
+
+        Car car = new Car();
+        car.DisplayAllAvailableCars();
+        //car.Display();
     
     }
 }

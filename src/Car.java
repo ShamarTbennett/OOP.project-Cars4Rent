@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -119,8 +120,6 @@ public class Car extends Vehicle{
         input.close();
     }
 
-
-
    public void saveToFile() {
     try {
             File file = new File("Vehicle.txt");
@@ -139,7 +138,7 @@ public class Car extends Vehicle{
             String vehicle = licenseNum + "\t\t\t" + type + "\t  \t  " + brand + "\t" +
                             model + "\t " + year + "\t " + color + "\t " + engineSize + "\t   \t\t  " +
                             fueltype + "\t\t " + transmissiontype + "\t\t\t  " + mileage + "\t\t\t  " +
-                            seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t\t\t  " + interiortype + "\t\t\t  " + rentalStatus + "\n";
+                            seatCapacity + "\t\t " + ratesPerday + "\t\t\t\t\t\t\t\t\t\t\t\t  " + interiortype + "\t\t\t" + rentalStatus + "\n";
 
             instream.write(vehicle);
             instream.close();
@@ -150,33 +149,75 @@ public class Car extends Vehicle{
             System.out.println("Could not save vehicle to file");
         }
     }
+ 
+    public void DisplayAllAvailableCars() {
 
+        System.out.println("\n\t\t\t\t\t------------------- AVAILABLE CARS -------------------");
+        System.out.println(
+            "License Plate\tType\tBrand\tModel\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tInteriorType\tStatus"
+        );
+        System.out.println("====================================================================================="
+                            + "===============================================================================================");
 
-    public void DisplayAllAvailableCars(){
+        try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
-        try {
-            File file = new File("Vehicle.txt");
-            Scanner fileReader = new Scanner(file);
+            while (infileStream.hasNextLine()) {
+                String line = infileStream.nextLine().trim();
+                if (line.isEmpty()) continue;
 
-            System.out.println("\t\t\t\t\t\t------------------- AVAILABLE CARS -----------------");
-            System.out.println(
-                "License Plate\tType\t  Brand\t  Model\t Year\t Color\t EngineSize(L)\t FuelType\t Transmission\t Mileage(km)\t Seats\t RatePerDay($)\t InteriorType \t Status"
-            );
-            while (fileReader.hasNextLine()) {
-                String data = fileReader.nextLine();
-                String[] vehicleData = data.split("\t");
+                String[] p = line.split("\\s+");
+                int i = 0;
 
-                if (vehicleData.length >= 15 && vehicleData[14].trim().equals("Available") && vehicleData[1].trim().equals("Car")) {
-                    System.out.println(data);
+                this.licenseNum = p[i++];
+                this.type = p[i++];
+
+                // ONLY CARS
+                if (!type.equalsIgnoreCase("Car")) continue;
+
+                this.brand = p[i++];
+                this.model = p[i++];
+
+                this.year = Integer.parseInt(p[i++]);
+                this.color = p[i++];
+                this.engineSize = Double.parseDouble(p[i++]);
+
+                this.fueltype = p[i++];
+                this.transmissiontype = p[i++];
+
+                this.mileage = Integer.parseInt(p[i++]);
+                this.seatCapacity = Integer.parseInt(p[i++]);
+                this.ratesPerday = Integer.parseInt(p[i++]);
+
+                // CAR-SPECIFIC FIELD
+                this.interiortype = p[i++];
+
+                this.rentalStatus = p[i];
+
+                // ONLY AVAILABLE CARS
+                if (rentalStatus.equalsIgnoreCase("Available")) {
+                    Display(); // ✅ USE DISPLAY METHOD
                 }
-            };
-            fileReader.close();
-        } catch (IOException e) {
-            System.out.println("Could not read vehicle file");
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Vehicle.txt not found.");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format in Vehicle.txt.");
+            e.printStackTrace();
         }
     }
 
 
+
+    @Override
+    public void Display(){
+            //System.out.println("License Plate \tType\t Brand\t  \tModel \t\tYear\t Color\t EngineSize(L)\t FuelType\tTransmission\tMileage(km)\t Seats\t RatePerDay($) \t InteriorType \t Status");
+            System.out.println("----------------------------------------------------------------------"
+                                +"--------------------------------------------------------------------------------------------------------------");
+            System.out.println(licenseNum + "      \t" + type + "\t " + brand + "\t" + model + "\t\t" + year + "\t " + color + "\t " + 
+                                engineSize + "\t\t " + fueltype + "\t\t " + transmissiontype + "\t\t" + mileage + "\t\t " +
+                                seatCapacity + "\t " + ratesPerday + "\t\t  " + interiortype + "\t \t"  + rentalStatus );
+        }
      public String toString() {
         return "Car{" +
                 "interiortype='" + interiortype + '\'' +

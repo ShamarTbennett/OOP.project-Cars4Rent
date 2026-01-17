@@ -2,7 +2,7 @@
 6708CP			Car	  	  Subaru		Impreza	 		2012	 Black	 2.0	   		  Gas		 A			      63752			  5		 12000												  Silk			  Available
 1416JG			Car	  	  Toyota		Probox	 		2012	 White	 1.6	   		  Gas		 A			      321843		  5		 6500												  Silk			  Available
 8638HS			Car	  	  BMW	    	M5	     		2019	 Black	 4.4	   		  Gas		 M			      2300			  5		 70000												  Silk			  Available
-4337EB			Car	  	  Mercedes		AMGC63	 		2019	 White	 4.0	   		  Diesel	 CVT			  428			  5		 55000												  Silk			  Available
+4337EB			Car	  	  Mercedes	AMGC63	 		2019	 White	 4.0	   		  Diesel	 CVT			  428			  5		 55000												  Silk			  Available
 
 8967PO			Truck	  Toyota		Hilux	 		2018	 Orange	 2.4	   		  Diesel	 M				  57542			  3		 25000			 750.0												  Available
 7532CY			Truck	  Ford	    	RangerRaptor	2018	 Blue	 3.2	   		  Diesel	 A				  14731			  5		 42000			 2500.0												  Available
