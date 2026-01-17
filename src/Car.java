@@ -152,7 +152,10 @@ public class Car extends Vehicle{
  
     public void DisplayAllAvailableCars() {
 
-        System.out.println("\n\t\t\t\t\t------------------- AVAILABLE CARS -------------------");
+        System.out.println("\t\t\t\t     |----------------------------------------------------------|");
+        System.out.println("\t\t\t\t     |------------------- AVAILABLE CARS -----------------------|");
+        System.out.println("\t\t\t\t     |----------------------------------------------------------|");
+        System.out.println();
         System.out.println(
             "License Plate\tType\tBrand\tModel\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tInteriorType\tStatus"
         );
