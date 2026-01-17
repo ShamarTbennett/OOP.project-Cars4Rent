@@ -31,13 +31,15 @@ public class Driver {
        // Rental rental = new Rental();
         //rental.viewvehicles();
 
-        Vehicle v = new Vehicle();
+        //Vehicle v = new Vehicle();
         //v.Display();
         //System.out.println(v.toString());
 
-        Car car = new Car();
-        car.DisplayAllAvailableCars();
+        //Car car = new Car();
+        //car.DisplayAllAvailableCars();
         //car.Display();
     
+        Truck t = new Truck();
+        t.DisplayAllAvailableTrucks();
     }
 }

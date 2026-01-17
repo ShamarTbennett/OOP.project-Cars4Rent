@@ -215,8 +215,7 @@ public class Car extends Vehicle{
     @Override
     public void Display(){
             //System.out.println("License Plate \tType\t Brand\t  \tModel \t\tYear\t Color\t EngineSize(L)\t FuelType\tTransmission\tMileage(km)\t Seats\t RatePerDay($) \t InteriorType \t Status");
-            System.out.println("----------------------------------------------------------------------"
-                                +"--------------------------------------------------------------------------------------------------------------");
+            //System.out.println("----------------------------------------------------------------------"+"--------------------------------------------------------------------------------------------------------------");
             System.out.println(licenseNum + "      \t" + type + "\t " + brand + "\t" + model + "\t\t" + year + "\t " + color + "\t " + 
                                 engineSize + "\t\t " + fueltype + "\t\t " + transmissiontype + "\t\t" + mileage + "\t\t " +
                                 seatCapacity + "\t " + ratesPerday + "\t\t  " + interiortype + "\t \t"  + rentalStatus );
