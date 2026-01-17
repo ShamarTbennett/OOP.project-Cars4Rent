@@ -72,21 +72,19 @@ public class Vehicle {
     // toString Method
     @Override
     public String toString() {
-        return "Vehicle {" +
-                "License Number='" + licenseNum + '\'' +
-                "Type=" + type + '\'' +
-                ", Brand='" + brand + '\'' +
-                ", Model='" + model + '\'' +
-                ", Year=" + year +
-                ", Color='" + color + '\'' +
-                ", Engine Size=" + engineSize +
-                ", Fuel Type='" + fueltype + '\'' +
-                ", Transmission Type='" + transmissiontype + '\'' +
-                ", Mileage=" + mileage +
-                ", Seat Capacity=" + seatCapacity +
-                ", Rental Status='" + rentalStatus + '\'' +
-                ", Rates Per Day=" + ratesPerday +
-                '}';
+        return "License Number='" + licenseNum + '\n' +
+                "Type=" + type + "\n" +
+                "Brand='" + brand + "\n" +
+                "Model='" + model + "\n" +
+                "Year=" + year + "\n" +
+                "Color='" + color + "\n" +
+                "Engine Size=" + engineSize + "\n"+
+                "Fuel Type='" + fueltype + '\n' +
+                "Transmission Type='" + transmissiontype + '\n' +
+                "Mileage=" + mileage + "\n" +
+                "Seat Capacity=" + seatCapacity +"\n" +
+                "Rental Status='" + rentalStatus + "\n" +
+                "Rates Per Day=" + ratesPerday;
     }
 
     // Getters and Setters

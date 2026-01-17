@@ -13,7 +13,6 @@ public class Driver {
         c3.saveToFile();
         System.out.println(c.toString());*/
 
-
         /*Truck t = new Truck("8967PO",	"Truck",	"Toyota"	,"Hilux"	,2018	,"Orange",	2.4	,"Diesel"	,"M"	 ,57542 	,3	 ,25000, 	750,  "Available");
         //t.saveToFile();
         Truck t1 = new Truck("7532CY",	"Truck",	"Ford",	"RangerRaptor"	,2018,	"Blue"	,3.2,	"Diesel",	"A"	, 14731, 	5	, 42000, 	2500,  "Available");
@@ -30,8 +29,11 @@ public class Driver {
         //b.saveToFile();
 
         Rental rental = new Rental();
-        rental.viewvehicles();
+        //rental.viewvehicles();
 
+        Vehicle v = new Vehicle();
+        
+        System.out.println(v.toString());
     
     }
 }
