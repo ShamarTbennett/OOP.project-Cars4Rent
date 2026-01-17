@@ -28,12 +28,12 @@ public class Driver {
         //Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
         //b.saveToFile();
 
-        Rental rental = new Rental();
+       // Rental rental = new Rental();
         //rental.viewvehicles();
 
         Vehicle v = new Vehicle();
-        
-        System.out.println(v.toString());
+        v.Display();
+        //System.out.println(v.toString());
     
     }
 }

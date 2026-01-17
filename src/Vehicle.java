@@ -16,18 +16,18 @@ public class Vehicle {
 
     //default constructor
     public Vehicle(){
-        this.licenseNum = "";
-        this.type = "";
-        this.brand = " ";
-        this.model = "";
+        this.licenseNum = "123648";
+        this.type = "vehicle";
+        this.brand = "vehicle ";
+        this.model = "vehicle";
         this.year = 1818;
-        this.color = "";
+        this.color = "Black";
         this.engineSize = 0.1;
-        this.fueltype = "";
-        this.transmissiontype = "";
+        this.fueltype = "Gass";
+        this.transmissiontype = "Automatic";
         this.mileage = 1000;
         this.seatCapacity = 1;
-        this.rentalStatus = "";
+        this.rentalStatus = "Available";
         this.ratesPerday = 1000;
     }
 
@@ -69,6 +69,13 @@ public class Vehicle {
         this.ratesPerday = other.ratesPerday;
     }
 
+    public void Display(){
+        System.out.println("License Plate \tType\t Brand\t  \tModel \t\tYear\t Color\t EngineSize(L)\t FuelType\tTransmission\tMileage(km)\t Seats\t RatePerDay($) \t  Status");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println(licenseNum + "      \t" + type + "\t " + brand + "\t" + model + "\t\t" + year + "\t " + color + "\t " + 
+                            engineSize + "\t\t " + fueltype + "\t\t " + transmissiontype + "\t" + mileage + "\t\t " +
+                            seatCapacity + "\t " + ratesPerday + "\t\t  "  + rentalStatus );
+    }
     // toString Method
     @Override
     public String toString() {
