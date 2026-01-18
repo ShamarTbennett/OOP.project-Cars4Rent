@@ -67,7 +67,7 @@ public class Truck extends Vehicle{
     System.out.println();
 
     System.out.println(
-        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
+        "License Plate\tType\tBrand\tModel\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
     );
     System.out.println("====================================================================================="
             + "===============================================================================================");
