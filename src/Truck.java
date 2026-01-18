@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Truck extends Vehicle{
     
     private double towingcapacity;
-
+    private String interiortype;
     // Default Constructor
     public Truck(){
         super();
