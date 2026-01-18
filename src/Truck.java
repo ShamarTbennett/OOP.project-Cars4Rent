@@ -12,22 +12,25 @@ public class Truck extends Vehicle{
     public Truck(){
         super();
         this.towingcapacity = 1000.0;
+        this.interiortype = "Standard";
     }
 
     // Primary (Parameterized) Constructor
     public Truck(String licenseNum, String type, String brand, String model, int year,
                  String color, double engineSize, String fueltype,
                  String transmissiontype, int mileage, int seatCapacity, int ratesPerday, double towingcapacity,
-                 String rentalStatus) {
+                 String rentalStatus, String interiortype) {
         super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, rentalStatus, ratesPerday);
         this.towingcapacity = towingcapacity;
+        this.interiortype = interiortype;
     }
 
     // Copy Constructor
     public Truck(Truck other) {
         super(other);
         this.towingcapacity = other.towingcapacity;
+        this.interiortype = other.interiortype;
     }
     public void saveToFile() {
         try {
@@ -67,10 +70,10 @@ public class Truck extends Vehicle{
     System.out.println();
 
     System.out.println(
-        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
+        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tInteriorType\tStatus"
     );
     System.out.println("====================================================================================="
-            + "===============================================================================================");
+            + "==========================================================================================================");
 
     try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
@@ -103,10 +106,10 @@ public class Truck extends Vehicle{
 
             // 🚚 TRUCK-SPECIFIC FIELD
             this.towingcapacity = Double.parseDouble(p[i++]);
-
-            //this.interiortype = p[i++];
-            this.rentalStatus = p[i];
             this.interiortype = p[i++];
+
+            this.rentalStatus = p[i];
+           
             // ONLY AVAILABLE TRUCKS
             if (rentalStatus.equalsIgnoreCase("Available")) {
                 Display(); // 👈 separate display method
@@ -129,8 +132,7 @@ public class Truck extends Vehicle{
             year + "\t" + color + "\t" + engineSize + "\t" +
             fueltype + "\t" + transmissiontype + "\t" +
             mileage + "\t" + seatCapacity + "\t" +
-            ratesPerday + "\t" + towingcapacity + "\t\t" + rentalStatus
-        );
+            ratesPerday + "\t" + towingcapacity + "\t\t" + interiortype + "\t\t" + rentalStatus);
     }
 
     public String toString() {
@@ -159,6 +161,12 @@ public class Truck extends Vehicle{
         this.towingcapacity = towingcapacity;
     }
 
+    public String getInteriortype() {
+        return interiortype;
+    }
+    public void setInteriortype(String interiortype) {
+        this.interiortype = interiortype;
+    }
     
     
 }
