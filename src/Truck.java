@@ -67,7 +67,7 @@ public class Truck extends Vehicle{
     System.out.println();
 
     System.out.println(
-        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tStatus"
+        "License Plate\tType\tBrand\tModel\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tTowingCapacity(kg)\tInteriorType\tStatus"
     );
     System.out.println("====================================================================================="
             + "===============================================================================================");
@@ -106,7 +106,7 @@ public class Truck extends Vehicle{
 
             //this.interiortype = p[i++];
             this.rentalStatus = p[i];
-
+            this.interiortype = p[i++];
             // ONLY AVAILABLE TRUCKS
             if (rentalStatus.equalsIgnoreCase("Available")) {
                 Display(); // 👈 separate display method
