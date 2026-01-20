@@ -11,3 +11,7 @@
 7669BU			Truck	  Honda	    	Ridgeline	 	2017	 Black	 3.5	   		  Gas	 	 A				  17821			  5		 40000			 2267.0								  Silk	          Available
 
 7950HI			Bike	  Yamaha		YZFR1			2018	 Blue	 1.0	   		  Gas		 M				  3532			  2		 7000										1						  Available
+7752BI			Bike	  Kawasaki		Ninja300			2018	 Red	 0.3	   		  Gas		 M				  152			  2		 12000										1						  Available
+2853ER			Bike	  Ducati		Monster821			2017	 Red	 0.15	   		  Gas		 M				  34512			  2		 5000										2						  Available
+1583CD			Bike	  Suzuki		SV650X			2018	 Silver	 0.65	   		  Gas		 M				  23516			  2		 9000										2						  Available
+8818FU			Bike	  Honda		Activa5G			2017	 Yellow	 0.12	   		  Gas		 M				  67328			  2		 3000										2						  Available

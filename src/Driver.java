@@ -24,12 +24,20 @@ public class Driver {
         Truck t4 = new Truck("7669BU",	"Truck"	,"Honda",	"Ridgeline"	,2017	,"Black",	3.5,	"Gas",	"A"	, 17821, 	5	, 40000, 	2267,  "Available");
         t4.saveToFile();*/
     
-
-        //Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
+        /*//Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
         //b.saveToFile();
+        Bike b1 = new Bike("7752BI"	,"Bike"	,"Kawasaki" ,	"Ninja300",	2018,	"Red"	,0.3,	"Gas",	"M"	, 152,	2,	 12000,	1,"Available");
+        b1.saveToFile();
+        Bike b2 = new Bike("2853ER"	,"Bike",	"Ducati" ,	"Monster821",	2017	,"Red"	,0.15, "Gas",	"M"	 ,34512 	,2	 ,5000,2,"Available");
+        b2.saveToFile();
+        Bike b3 = new Bike("1583CD",	"Bike",	"Suzuki" ,	"SV650X"	,2018	,"Silver",	0.65,	"Gas",	"M",	 23516,2	, 9000,	2,"Available");
+        b3.saveToFile();
+        Bike b4 = new Bike("8818FU"	,"Bike",	"Honda"	,"Activa5G",	2017,	"Yellow",	0.12,	"Gas",	"M",	 67328, 	2,	 3000,	2,"Available");
+        b4.saveToFile();*/
 
-        Rental rental = new Rental();
-        rental.viewvehicles();
+
+        //Rental rental = new Rental();
+        //rental.viewvehicles();
 
         //Vehicle v = new Vehicle();
         //v.Display();
