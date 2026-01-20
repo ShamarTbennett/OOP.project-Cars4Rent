@@ -39,7 +39,10 @@ public class Driver {
         //car.DisplayAllAvailableCars();
         //car.Display();
     
-        Truck t = new Truck();
-        t.DisplayAllAvailableTrucks();
+        //Truck t = new Truck();
+        //t.DisplayAllAvailableTrucks();
+
+        Bike bike = new Bike();
+        bike.DisplayAllAvailableBikes();
     }
 }
