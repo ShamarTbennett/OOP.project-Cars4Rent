@@ -150,6 +150,7 @@ public class Car extends Vehicle{
         }
     }
  
+    @Override
     public void DisplayAllAvailableCars() {
 
         System.out.println("\t\t\t\t     |----------------------------------------------------------|");

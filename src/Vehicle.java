@@ -69,6 +69,15 @@ public class Vehicle {
         this.ratesPerday = other.ratesPerday;
     }
 
+    public void DisplayAllAvailableBikes(){
+
+    }
+    public void DisplayAllAvailableCars(){
+        System.out.println("In the Vehicle class");
+    }
+    public void DisplayAllAvailableTrucks(){
+        
+    }
     public void Display(){
         System.out.println("License Plate \tType\t Brand\t  \tModel \t\tYear\t Color\t EngineSize(L)\t FuelType\tTransmission\tMileage(km)\t Seats\t RatePerDay($) \t  Status");
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");

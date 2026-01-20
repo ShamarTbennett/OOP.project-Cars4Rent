@@ -52,5 +52,11 @@ public class Driver {
 
         //Bike bike = new Bike();
         //bike.DisplayAllAvailableBikes();
+
+        Vehicle v = new Vehicle();
+        v.DisplayAllAvailableCars();
+        System.out.println();
+        v = new Car();
+        v.DisplayAllAvailableCars();
     }
 }
