@@ -28,8 +28,8 @@ public class Driver {
         //Bike b = new Bike("7950HI",	"Bike"	,"Yamaha",	"YZFR1",	2018,	"Blue",	1.0,	"Gas",	"M"	 ,3532, 	2,	 7000,	1,"Available");
         //b.saveToFile();
 
-       // Rental rental = new Rental();
-        //rental.viewvehicles();
+        Rental rental = new Rental();
+        rental.viewvehicles();
 
         //Vehicle v = new Vehicle();
         //v.Display();
@@ -42,7 +42,7 @@ public class Driver {
         //Truck t = new Truck();
         //t.DisplayAllAvailableTrucks();
 
-        Bike bike = new Bike();
-        bike.DisplayAllAvailableBikes();
+        //Bike bike = new Bike();
+        //bike.DisplayAllAvailableBikes();
     }
 }

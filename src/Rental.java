@@ -85,42 +85,6 @@ public class Rental extends Vehicle {
         }
     }
 
-   /* public void viewvehicles(){
-
-        Scanner infileStream = null;
-
-        try {
-            infileStream = new Scanner(new File("Vehicle.txt"));
-
-            while(infileStream.hasNext()){
-                this.licenseNum = infileStream.next();
-                this.type = infileStream.next();
-                this.brand = infileStream.next();
-                this.model = infileStream.next();
-                this.year = infileStream.nextInt();
-                this.color = infileStream.next();
-                this.engineSize = infileStream.nextDouble();
-                this.fueltype = infileStream.next();
-                this.transmissiontype = infileStream.next();
-                this.mileage = infileStream.nextInt();
-                this.seatCapacity = infileStream.nextInt();
-                this.ratesPerday = infileStream.nextInt();
-                this.towingCapacity = infileStream.nextDouble();
-                this.numberOfHelmets = infileStream.nextInt();
-                this.interiortype = infileStream.next();
-                this.rentalStatus = infileStream.next();
-
-                System.out.println(this.toString());
-            }
-        } catch (FileNotFoundException e) {
-            
-            e.printStackTrace();
-        } catch ( Exception e) {
-            //System.out.println("File could not be found: " + e.getMessage());
-            e.printStackTrace();
-        }
-        infileStream.close();
-    }*/
     @Override
     public String toString() {
         return "Rental{" +
