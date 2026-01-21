@@ -78,6 +78,10 @@ public class Vehicle {
     public void DisplayAllAvailableTrucks(){
         
     }
+    public void viewvehicles(){
+
+    }
+    
     public void Display(){
         System.out.println("License Plate \tType\t Brand\t  \tModel \t\tYear\t Color\t EngineSize(L)\t FuelType\tTransmission\tMileage(km)\t Seats\t RatePerDay($) \t  Status");
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");

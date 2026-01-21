@@ -28,6 +28,7 @@ public class Rental extends Vehicle {
         this.towingCapacity = towingcapacity;
     }
 
+    
     public void viewvehicles() {
 
         try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
