@@ -152,6 +152,6 @@ public class Rental extends Vehicle {
             System.out.println("Vehicle.txt not found.");
     }
 
-
+    }
 
 }
