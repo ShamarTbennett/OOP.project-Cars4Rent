@@ -145,6 +145,10 @@ public class Rental extends Vehicle {
                 if (this.rentalStatus.equalsIgnoreCase("Available")) {
                     System.out.println(toString());
                 }
+
+                if(this.licenseNum.equals(""){
+
+                    
             }
 
         } catch (FileNotFoundException e) {
