@@ -130,8 +130,7 @@ public class Rental extends Vehicle {
                 this.numberOfHelmets = 0;
                 this.interiortype = "None";
 
-                // VEHICLE-SPECIFIC FIELDS
-                if (type.equalsIgnoreCase("Car")) {
+               if (type.equalsIgnoreCase("Car")) {
                     this.interiortype = p[i++];
                 }
                 else if (type.equalsIgnoreCase("Truck")) {
