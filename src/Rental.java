@@ -149,6 +149,7 @@ public class Rental extends Vehicle {
                 if(this.licenseNum.equals("yh"){
 
                 }
+                if (this.brand.equalsIgnoreCase"mozda"){}
                     
 
                     
