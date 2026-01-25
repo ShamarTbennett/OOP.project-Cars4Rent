@@ -138,20 +138,10 @@ public class Rental extends Vehicle {
 
             this.rentalStatus = p[i];
 
-            // must be available
-            if (!rentalStatus.equalsIgnoreCase("Available")) continue;
-
-            boolean match =
-                    licenseNum.toLowerCase().contains(search) ||
-                    brand.toLowerCase().contains(search) ||
-                    model.toLowerCase().contains(search) ||
-                    interiortype.toLowerCase().contains(search) ||
-                    String.valueOf(year).equals(search);
-
-            if (match) {
-                System.out.println(toString());
+                if (this.rentalStatus.equalsIgnoreCase("Available")) {
+                    System.out.println(toString());
+                }
             }
-        }
 
     } catch (FileNotFoundException e) {
         System.out.println("Vehicle.txt not found.");
