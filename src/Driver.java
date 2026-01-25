@@ -3,7 +3,11 @@ public class Driver {
     
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+
+        Rental r = new Rental();
+        r.searchAvailableVehicles("2019");
+
+        /*Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -83,8 +87,8 @@ public class Driver {
             }
 
         } while (viewChoice != 5);
-    }
+    }*/
 
  
-    
+    }
 }

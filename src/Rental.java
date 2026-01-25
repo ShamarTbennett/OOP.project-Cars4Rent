@@ -97,60 +97,65 @@ public class Rental extends Vehicle {
     }
 
 
-    public void searchavailablevehicles() {
-        // Implementation for searching available vehicles
+   public void searchAvailableVehicles(String userInput) {
 
-        try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
-            while (infileStream.hasNextLine()) {
-                String line = infileStream.nextLine().trim();
+    String search = userInput.trim().toLowerCase();
 
-                if (line.isEmpty()) continue;
+    try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
-                String[] p = line.split("\\s+");
-                int i = 0;
+        while (infileStream.hasNextLine()) {
+            String line = infileStream.nextLine().trim();
+            if (line.isEmpty()) continue;
 
-                this.licenseNum = p[i++];
-                this.type = p[i++];
-                this.brand = p[i++];
-                this.model = p[i++];
+            String[] p = line.split("\\s+");
+            int i = 0;
 
-                this.year = Integer.parseInt(p[i++]);
-                this.color = p[i++];
-                this.engineSize = Double.parseDouble(p[i++]);
+            this.licenseNum = p[i++];
+            this.type = p[i++];
+            this.brand = p[i++];
+            this.model = p[i++];
+            this.year = Integer.parseInt(p[i++]);
+            this.color = p[i++];
+            this.engineSize = Double.parseDouble(p[i++]);
+            this.fueltype = p[i++];
+            this.transmissiontype = p[i++];
+            this.mileage = Integer.parseInt(p[i++]);
+            this.seatCapacity = Integer.parseInt(p[i++]);
+            this.ratesPerday = Integer.parseInt(p[i++]);
 
-                this.fueltype = p[i++];
-                this.transmissiontype = p[i++];
+            // reset optional fields
+            this.towingCapacity = 0;
+            this.numberOfHelmets = 0;
+            this.interiortype = "None";
 
-                this.mileage = Integer.parseInt(p[i++]);
-                this.seatCapacity = Integer.parseInt(p[i++]);
-                this.ratesPerday = Integer.parseInt(p[i++]);
-
-                // RESET OPTIONAL FIELDS
-                this.towingCapacity = 0;
-                this.numberOfHelmets = 0;
-                this.interiortype = "None";
-
-               if (type.equalsIgnoreCase("Car")) {
-                    this.interiortype = p[i++];
-                }
-                else if (type.equalsIgnoreCase("Truck")) {
-                    this.towingCapacity = (int) Double.parseDouble(p[i++]);
-                }
-                else if (type.equalsIgnoreCase("Bike")) {
-                    this.numberOfHelmets = Integer.parseInt(p[i++]);
-                }
-
-                this.rentalStatus = p[i];
-
-                if (this.rentalStatus.equalsIgnoreCase("Available")) {
-                    System.out.println(toString());
-                }
+            if (type.equalsIgnoreCase("Car")) {
+                this.interiortype = p[i++];
+            } else if (type.equalsIgnoreCase("Truck")) {
+                this.towingCapacity = Integer.parseInt(p[i++]);
+            } else if (type.equalsIgnoreCase("Bike")) {
+                this.numberOfHelmets = Integer.parseInt(p[i++]);
             }
 
-        } catch (FileNotFoundException e) {
-            System.out.println("Vehicle.txt not found.");
-    }
+            this.rentalStatus = p[i];
 
+            // must be available
+            if (!rentalStatus.equalsIgnoreCase("Available")) continue;
+
+            boolean match =
+                    licenseNum.toLowerCase().contains(search) ||
+                    brand.toLowerCase().contains(search) ||
+                    model.toLowerCase().contains(search) ||
+                    interiortype.toLowerCase().contains(search) ||
+                    String.valueOf(year).equals(search);
+
+            if (match) {
+                System.out.println(toString());
+            }
+        }
+
+    } catch (FileNotFoundException e) {
+        System.out.println("Vehicle.txt not found.");
     }
+}
 
 }
