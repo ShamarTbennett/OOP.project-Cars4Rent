@@ -5,21 +5,21 @@ import java.util.Scanner;
 public class Rental extends Vehicle {
     private String  interiortype;
     private int numberOfHelmets;
-    private double towingCapacity;
+    private int towingCapacity;
 
 
     public Rental() {
         super();
         this.interiortype = "Standard";
         this.numberOfHelmets = 1;
-        this.towingCapacity = 1000.0;
+        this.towingCapacity = 1000;
     }
 
     // Primary (Parameterized) Constructor
     public Rental(String licenseNum, String type, String brand, String model, int year,
                   String color, double engineSize, String fueltype,
                   String transmissiontype, int mileage, int seatCapacity,
-                  int ratesPerday, String interiortype, int numberOfHelmets, double towingcapacity,
+                  int ratesPerday, String interiortype, int numberOfHelmets, int towingcapacity,
                   String rentalStatus) {
         super(licenseNum, type, brand, model, year, color, engineSize, fueltype,
               transmissiontype, mileage, seatCapacity, rentalStatus, ratesPerday);
@@ -97,55 +97,67 @@ public class Rental extends Vehicle {
     }
 
 
-   public void searchAvailableVehicles(String userInput) {
+    public void searchAvailableVehicles(String userInput) {
 
-    String search = userInput.trim().toLowerCase();
+        String search = userInput.trim().toLowerCase();
 
-    try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
+        try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
-        while (infileStream.hasNextLine()) {
-            String line = infileStream.nextLine().trim();
-            if (line.isEmpty()) continue;
+            while (infileStream.hasNextLine()) {
+                String line = infileStream.nextLine().trim();
+                if (line.isEmpty()) continue;
 
-            String[] p = line.split("\\s+");
-            int i = 0;
+                String[] p = line.split("\\s+");
+                int i = 0;
 
-            this.licenseNum = p[i++];
-            this.type = p[i++];
-            this.brand = p[i++];
-            this.model = p[i++];
-            this.year = Integer.parseInt(p[i++]);
-            this.color = p[i++];
-            this.engineSize = Double.parseDouble(p[i++]);
-            this.fueltype = p[i++];
-            this.transmissiontype = p[i++];
-            this.mileage = Integer.parseInt(p[i++]);
-            this.seatCapacity = Integer.parseInt(p[i++]);
-            this.ratesPerday = Integer.parseInt(p[i++]);
+                this.licenseNum = p[i++];
+                this.type = p[i++];
+                this.brand = p[i++];
+                this.model = p[i++];
+                this.year = Integer.parseInt(p[i++]);
+                this.color = p[i++];
+                this.engineSize = Double.parseDouble(p[i++]);
+                this.fueltype = p[i++];
+                this.transmissiontype = p[i++];
+                this.mileage = Integer.parseInt(p[i++]);
+                this.seatCapacity = Integer.parseInt(p[i++]);
+                this.ratesPerday = Integer.parseInt(p[i++]);
 
-            // reset optional fields
-            this.towingCapacity = 0;
-            this.numberOfHelmets = 0;
-            this.interiortype = "None";
+                // reset optional fields
+                this.towingCapacity = 0;
+                this.numberOfHelmets = 0;
+                this.interiortype = "None";
 
-            if (type.equalsIgnoreCase("Car")) {
-                this.interiortype = p[i++];
-            } else if (type.equalsIgnoreCase("Truck")) {
-                this.towingCapacity = Integer.parseInt(p[i++]);
-            } else if (type.equalsIgnoreCase("Bike")) {
-                this.numberOfHelmets = Integer.parseInt(p[i++]);
-            }
+                // read optional field based on type
+                if (type.equalsIgnoreCase("Car")) {
+                    this.interiortype = p[i++];
+                } else if (type.equalsIgnoreCase("Truck")) {
+                    this.towingCapacity = Integer.parseInt(p[i++]);
+                } else if (type.equalsIgnoreCase("Bike")) {
+                    this.numberOfHelmets = Integer.parseInt(p[i++]);
+                }
 
-            this.rentalStatus = p[i];
+                // rental status MUST be last
+                this.rentalStatus = p[i];
 
-                if (this.rentalStatus.equalsIgnoreCase("Available")) {
+                // must be available
+                if (!rentalStatus.equalsIgnoreCase("Available")) continue;
+
+                boolean match =
+                        licenseNum.toLowerCase().contains(search) ||
+                        brand.toLowerCase().contains(search) ||
+                        model.toLowerCase().contains(search) ||
+                        interiortype.toLowerCase().contains(search) ||
+                        String.valueOf(year).equals(search);
+
+                if (match) {
                     System.out.println(toString());
                 }
             }
 
-    } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt not found.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Vehicle.txt not found.");
+        }
     }
-}
 
 }
