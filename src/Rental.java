@@ -123,21 +123,30 @@ public class Rental extends Vehicle {
             v.transmissiontype = p[i++];
             v.mileage = Integer.parseInt(p[i++]);
             v.seatCapacity = Integer.parseInt(p[i++]);
-            v.ratesPerday = Integer.parseInt(p[i++]);
+            this.ratesPerday = Integer.parseInt(p[i++]);
 
-            v.towingCapacity = 0;
-            v.numberOfHelmets = 0;
-            v.interiortype = "None";
 
-            if (v.type.equalsIgnoreCase("Car")) {
-                v.interiortype = p[i++];
-            } else if (v.type.equalsIgnoreCase("Truck")) {
-                v.towingCapacity = Integer.parseInt(p[i++]);
-            } else if (v.type.equalsIgnoreCase("Bike")) {
-                v.numberOfHelmets = Integer.parseInt(p[i++]);
+            // reset optional fields
+            this.towingCapacity = 0;
+            this.numberOfHelmets = 0;
+            this.interiortype = "None";
+
+            // read type-specific field
+            if (type.equalsIgnoreCase("Car")) {
+                this.interiortype = p[i++];       // Silk
+            }
+            else if (type.equalsIgnoreCase("Truck")) {
+                this.towingCapacity = Integer.parseInt(p[i++]); // 750 / 2500 / etc
+                this.interiortype = p[i++];       // Silk
+            }
+            else if (type.equalsIgnoreCase("Bike")) {
+                this.numberOfHelmets = Integer.parseInt(p[i++]); // 1 / 2
+                this.interiortype = p[i++];       // Silk
             }
 
-            v.rentalStatus = p[i];
+            // NOW rental status is truly last
+            this.rentalStatus = p[i];
+
 
             if (!v.rentalStatus.equalsIgnoreCase("Available")) continue;
 
