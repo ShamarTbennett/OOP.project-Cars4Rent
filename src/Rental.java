@@ -163,7 +163,7 @@ public class Rental extends Vehicle {
         }
 
     } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt not found.");
+        System.out.println("Vehicle.txt was not found.");
     }
 }
 
