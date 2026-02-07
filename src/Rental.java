@@ -159,7 +159,7 @@ public class Rental extends Vehicle {
 
             if (match) {
                 System.out.println(v); // prints EACH matching vehicle
-                System.out.println();
+                System.out.println("heyyyyyyy");
                 System.out.println();
                 
             }
