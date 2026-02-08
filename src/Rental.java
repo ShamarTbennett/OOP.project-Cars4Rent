@@ -161,7 +161,6 @@ public class Rental extends Vehicle {
                 System.out.println(v); // prints EACH matching vehicle
                 System.out.println("heyyyyyyy");
                 System.out.println("what willni doooo");
-                System.out.print("yess");
                 
             }
         }
