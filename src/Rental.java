@@ -159,11 +159,19 @@ public class Rental extends Vehicle {
 
             if (match) {
                 System.out.println(v); // prints EACH matching vehicle
+                System.out.print();
+                v.brand.toLowerCase;
+                
+                
+            
+                
+                
+                
             }
         }
 
     } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt not found.");
+        System.out.println("Vehicle.txt was not found.");
     }
 }
 
