@@ -158,7 +158,7 @@ public class Rental extends Vehicle {
                         String.valueOf(v.year).equals(search);
 
                 if (match) {
-                    System.out.println(v); // prints EACH matching vehicl             
+                    display(); // prints EACH matching vehicl             
                     
                     
                 }
