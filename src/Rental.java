@@ -156,7 +156,7 @@ public class Rental extends Vehicle {
                         String.valueOf(v.year).equals(search);
 
                 if (match) {
-                    System.out.println(v);
+                    //System.out.println(v);
                     v.Display(); // prints EACH matching vehicl             
                     
                     
@@ -172,8 +172,8 @@ public class Rental extends Vehicle {
     @Override
     public void Display() {
 
-        System.out.println("License Plate \tType\t Brand\t Model\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tStatus\tInterior\tHelmets\tTowingCap");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        //System.out.println("License Plate \tType\t Brand\t Model\t\tYear\tColor\tEngineSize(L)\tFuelType\tTransmission\tMileage(km)\tSeats\tRatePerDay($)\tStatus\tInterior\tHelmets\tTowingCap");
+        //System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         System.out.println(
                 licenseNum + "\t" +
