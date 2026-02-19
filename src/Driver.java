@@ -5,7 +5,7 @@ public class Driver {
 
 
         Rental r = new Rental();
-        r.searchAvailableVehicles("2019");
+        r.searchAvailableVehicles("Toyota");
 
         /*Scanner scanner = new Scanner(System.in);
         int choice;
