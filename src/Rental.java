@@ -157,7 +157,7 @@ public class Rental extends Vehicle {
 
                 if (match) {
                     System.out.println(v);
-                    v.Display();Display(); // prints EACH matching vehicl             
+                    v.Display(); // prints EACH matching vehicl             
                     
                     
                 }
