@@ -75,7 +75,7 @@ public class Rental extends Vehicle {
 
                 this.rentalStatus = p[i];
 
-                System.out.println(toString());
+                Display();
             }
 
         } catch (FileNotFoundException e) {
@@ -195,4 +195,6 @@ public class Rental extends Vehicle {
         );
     }
 
+
+    
 }
