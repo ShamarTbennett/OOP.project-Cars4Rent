@@ -4,7 +4,7 @@ public class Driver {
     public static void main(String[] args) {
 
 
-        Rental r = new Rental();
+        //Rental r = new Rental();
         //r.searchAvailableVehicles("Toyota");
         //r.viewvehicles();
 
