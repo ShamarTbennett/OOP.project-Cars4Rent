@@ -195,6 +195,9 @@ public class Rental extends Vehicle {
         );
     }
 
+    public void updateVehicleStatus(){
+
+    }
 
     
 }
