@@ -1,17 +1,15 @@
-7665BG			Car	  	  Honda 		Fit	     		2014	 Blue	 1.5	   		  Gas		 CVT			  38941			  5		 11000												  Silk			  Available
-6708CP			Car	  	  Subaru		Impreza	 		2012	 Black	 2.0	   		  Gas		 A			      63752			  5		 12000												  Silk			  Available
-1416JG			Car	  	  Toyota		Probox	 		2012	 White	 1.6	   		  Gas		 A			      321843		  5		 6500												  Silk			  Available
-8638HS			Car	  	  BMW	    	M5	     		2019	 Black	 4.4	   		  Gas		 M			      2300			  5		 70000												  Silk			  notAvailable
-4337EB			Car	  	  Mercedes	    AMGC63	 		2019	 White	 4.0	   		  Diesel	 CVT			  428			  5		 55000												  Silk			  Available
-
-8967PO			Truck	  Toyota		Hilux	 		2018	 Orange	 2.4	   		  Diesel	 M				  57542			  3		 25000			 750								  Silk			  Available
-7532CY			Truck	  Ford	    	RangerRaptor	2018	 Blue	 3.2	   		  Diesel	 A				  14731			  5		 42000			 2500								  Silk			  notAvailable
-3705FN			Truck	  Nissan		Navara	 		2018	 Black	 2.3	   		  Gas	 	 A				  25368			  3		 22000			 3500								  Silk			  Available
-8594HE			Truck	  Volkswagen 	Amarok	 		2019	 Silver	 2.0	   		  Diesel	 M				  13512			  5		 38000			 1154								  Silk		      notAvailable
-7669BU			Truck	  Honda	    	Ridgeline	 	2017	 Black	 3.5	   		  Gas	 	 A				  17821			  5		 40000			 2267								  Silk	          Available
-
-7950HI			Bike	  Yamaha		YZFR1			2018	 Blue	 1.0	   		  Gas		 M				  3532			  2		 7000										1						  Available
-7752BI			Bike	  Kawasaki		Ninja300			2018	 Red	 0.3	   		  Gas		 M				  152			  2		 12000										1						  Available
-2853ER			Bike	  Ducati		Monster821			2017	 Red	 0.15	   		  Gas		 M				  34512			  2		 5000										2						  Available
-1583CD			Bike	  Suzuki		SV650X			2018	 Silver	 0.65	   		  Gas		 M				  23516			  2		 9000										2						  Available
-8818FU			Bike	  Honda		Activa5G			2017	 Yellow	 0.12	   		  Gas		 M				  67328			  2		 3000										2						  Available
+7665BG Car Honda Fit 2014 Blue 1.5 Gas CVT 38941 5 11000 Silk Available
+6708CP Car Subaru Impreza 2012 Black 2.0 Gas A 63752 5 12000 Silk Rented
+1416JG Car Toyota Probox 2012 White 1.6 Gas A 321843 5 6500 Silk Available
+8638HS Car BMW M5 2019 Black 4.4 Gas M 2300 5 70000 Silk notAvailable
+4337EB Car Mercedes AMGC63 2019 White 4.0 Diesel CVT 428 5 55000 Silk Available
+8967PO Truck Toyota Hilux 2018 Orange 2.4 Diesel M 57542 3 25000 750 Silk Available
+7532CY Truck Ford RangerRaptor 2018 Blue 3.2 Diesel A 14731 5 42000 2500 Silk notAvailable
+3705FN Truck Nissan Navara 2018 Black 2.3 Gas A 25368 3 22000 3500 Silk Available
+8594HE Truck Volkswagen Amarok 2019 Silver 2.0 Diesel M 13512 5 38000 1154 Silk notAvailable
+7669BU Truck Honda Ridgeline 2017 Black 3.5 Gas A 17821 5 40000 2267 Silk Available
+7950HI Bike Yamaha YZFR1 2018 Blue 1.0 Gas M 3532 2 7000 1 Available
+7752BI Bike Kawasaki Ninja300 2018 Red 0.3 Gas M 152 2 12000 1 Available
+2853ER Bike Ducati Monster821 2017 Red 0.15 Gas M 34512 2 5000 2 Available
+1583CD Bike Suzuki SV650X 2018 Silver 0.65 Gas M 23516 2 9000 2 Available
+8818FU Bike Honda Activa5G 2017 Yellow 0.12 Gas M 67328 2 3000 2 Available

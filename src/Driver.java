@@ -4,7 +4,8 @@ public class Driver {
     public static void main(String[] args) {
 
 
-        //Rental r = new Rental();
+        Rental r = new Rental();
+        r.updateVehicleStatus("6708CP", "Rented");
         //r.searchAvailableVehicles("Toyota");
         //r.viewvehicles();
 
