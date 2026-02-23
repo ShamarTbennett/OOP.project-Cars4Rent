@@ -195,8 +195,17 @@ public class Rental extends Vehicle {
         );
     }
 
-    public void updateVehicleStatus(){
 
+    // This method can be implemented to update the rental status of a vehicle
+    // For example, it could read the Vehicle.txt file, find the matching license number,
+    // and update the rentalStatus field to "Rented" or "Available" as needed.
+    public void updateVehicleStatus() {
+        
+        try {
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
     
