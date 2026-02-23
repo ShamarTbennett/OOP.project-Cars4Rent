@@ -1,15 +1,15 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 public class Driver {
     
     public static void main(String[] args) {
 
 
-        Rental r = new Rental();
-        r.updateVehicleStatus("6708CP", "Rented");
+       // Rental r = new Rental();
+        //r.updateVehicleStatus("6708CP", "Rented");
         //r.searchAvailableVehicles("Toyota");
         //r.viewvehicles();
 
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -89,8 +89,8 @@ public class Driver {
             }
 
         } while (viewChoice != 5);
-    }*/
+    }
 
  
-    }
+    
 }
