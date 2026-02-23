@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Rental extends Vehicle {
@@ -199,12 +200,46 @@ public class Rental extends Vehicle {
     // This method can be implemented to update the rental status of a vehicle
     // For example, it could read the Vehicle.txt file, find the matching license number,
     // and update the rentalStatus field to "Rented" or "Available" as needed.
-    public void updateVehicleStatus() {
-        
-        try {
-            
+    public void updateVehicleStatus(String licenseNumber, String newStatus) {
+
+        File inputFile = new File("Vehicle.txt");
+        File tempFile = new File("TempVehicle.txt");
+
+        try (
+            Scanner reader = new Scanner(inputFile);
+            PrintWriter writer = new PrintWriter(tempFile)
+        ) {
+
+            while (reader.hasNextLine()) {
+
+                String line = reader.nextLine();
+                if (line.trim().isEmpty()) continue;
+
+                String[] p = line.split("\\s+");
+
+                // License number is first field
+                if (p[0].equalsIgnoreCase(licenseNumber)) {
+
+                    // Rental status is LAST field
+                    p[p.length - 1] = newStatus;
+
+                    System.out.println("Vehicle status updated successfully.");
+                }
+
+                // Rebuild the line
+                String updatedLine = String.join(" ", p);
+                writer.println(updatedLine);
+            }
+
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("Error updating vehicle status.");
+            e.printStackTrace();
+            return;
+        }
+
+        // Replace old file with updated file
+        if (inputFile.delete()) {
+            tempFile.renameTo(inputFile);
         }
     }
 
