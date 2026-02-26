@@ -32,6 +32,7 @@ public class Truck extends Vehicle{
         this.towingcapacity = other.towingcapacity;
         this.interiortype = other.interiortype;
     }
+    
     public void saveToFile() {
         try {
                 File file = new File("Vehicle.txt");

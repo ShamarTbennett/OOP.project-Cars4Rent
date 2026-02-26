@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -201,7 +203,6 @@ public class Rental extends Vehicle {
     // For example, it could read the Vehicle.txt file, find the matching license number,
     // and update the rentalStatus field to "Rented" or "Available" as needed.
     public void updateVehicleStatus(String licenseNumber, String newStatus) {
-
         File inputFile = new File("Vehicle.txt");
         File tempFile = new File("TempVehicle.txt");
 
@@ -243,6 +244,35 @@ public class Rental extends Vehicle {
         }
     }
 
-    
+        
+    public void saveRentalRecord(String licensePlate, String customerName,
+                                String address, String phone,
+                                String dateRented, String expectedReturn,
+                                double depositPaid) {
+
+        try {
+
+            FileWriter instream = new FileWriter("RentalRecords.txt", true);
+
+            String rental = licensePlate + "\t\t" +
+                            customerName + "\t\t" +
+                            address + "\t\t" +
+                            phone + "\t\t" +
+                            dateRented + "\t\t" +
+                            expectedReturn + "\t\t" +
+                            depositPaid + "\n";
+
+            instream.write(rental);
+            instream.close();
+
+            System.out.println("Rental record saved to file");
+
+        } catch (IOException e) {
+            System.out.println("Could not save rental record");
+        }
+    }
+
+
+
     
 }
