@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Driver {
     
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Driver {
         //r.searchAvailableVehicles("Toyota");
         //r.viewvehicles();
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -89,8 +89,8 @@ public class Driver {
             }
 
         } while (viewChoice != 5);
-    }
+    }*/
 
- 
+    }
     
 }
