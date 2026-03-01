@@ -280,8 +280,11 @@ public class Rental extends Vehicle {
         String plate = scan.next();
 
         System.out.println("Enter the your full name without space");
-        String address = scan.next();
+        String name = scan.next();
 
+        System.out.print("Enter your address (no space): ");
+        String address = scan.next();
+        
         System.out.print("Enter your phone number: ");
         String phoneNumber = scan.next();
 
