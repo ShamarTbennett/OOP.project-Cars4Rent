@@ -273,6 +273,20 @@ public class Rental extends Vehicle {
     }
 
 
+    public void getRentalInformation(){
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Enter the plate number");
+        String plate = scan.next();
+
+        System.out.println("Enter the your full name without space");
+
+  
+Home address 
+Phone number 
+Date rented 
+Expected return date 
+Deposit paid 
+    }
     
 }
