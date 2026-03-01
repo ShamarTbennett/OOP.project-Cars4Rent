@@ -198,7 +198,4 @@ public class Vehicle {
     public void setRatesPerday(int ratesPerday) {
         this.ratesPerday = ratesPerday;
     }
-
-
-
 }
