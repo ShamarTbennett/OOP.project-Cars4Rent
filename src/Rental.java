@@ -280,13 +280,20 @@ public class Rental extends Vehicle {
         String plate = scan.next();
 
         System.out.println("Enter the your full name without space");
+        String address = scan.next();
 
+        System.out.print("Enter your phone number: ");
+        String phoneNumber = scan.next();
+
+        //use the built in date an time method here
+        System.out.print("");
   
-Home address 
-Phone number 
-Date rented 
-Expected return date 
-Deposit paid 
+        System.out.print("Return date: ");
+        //expectedreturndate = 
+
+         System.out.print("Depost amount: ");
+         int depositPaid = scan.nextInt();
+
     }
     
 }
