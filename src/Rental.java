@@ -200,7 +200,6 @@ public class Rental extends Vehicle {
         );
     }
 
-
     // This method can be implemented to update the rental status of a vehicle
     // For example, it could read the Vehicle.txt file, find the matching license number,
     // and update the rentalStatus field to "Rented" or "Available" as needed.
@@ -273,8 +272,6 @@ public class Rental extends Vehicle {
             System.out.println("Could not save rental record");
         }
     }
-
-
 
 
     public void getRentalInformation() {
@@ -396,5 +393,37 @@ public class Rental extends Vehicle {
 
         System.out.println("\nVehicle successfully rented.");
     }
-        
+      
+    
+    public boolean validatePlateAvailable(String plateNumber) {
+
+    try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
+
+        while (reader.hasNextLine()) {
+
+            String line = reader.nextLine().trim();
+            if (line.isEmpty()) continue;
+
+            String[] parts = line.split("\\s+");
+
+            if (parts[0].equalsIgnoreCase(plateNumber)) {
+
+                String status = parts[parts.length - 1];
+
+                if (status.equalsIgnoreCase("Available")) {
+                    return true;   // Plate exists and is available
+                } else {
+                    System.out.println("Vehicle is already rented.");
+                    return false;
+                }
+            }
+        }
+
+    } catch (FileNotFoundException e) {
+        System.out.println("Vehicle.txt not found.");
+    }
+
+    System.out.println("Plate number does not exist.");
+    return false;
+}
 }
