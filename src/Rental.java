@@ -348,33 +348,26 @@ public class Rental extends Vehicle {
             }
         }
 
-        // Calculate rental days
-        long days = ChronoUnit.DAYS.between(dateRented, returnDate);
-
-        // Calculate total cost
-        double totalCost = days * ratePerDay;
-
-        System.out.println("Rental Days: " + days);
-        System.out.println("Total Cost: $" + totalCost);
-
-        double minimumDeposit = totalCost * 0.30;
 
         // Deposit validation
         while (true) {
             try {
-                System.out.print("Deposit amount (minimum 30% = $" + minimumDeposit + "): ");
-                depositPaid = Double.parseDouble(scan.nextLine());
+                System.out.print("Deposit amount: ");
+                depositPaid = scan.nextInt();
 
-                if (depositPaid < minimumDeposit) {
-                    System.out.println("Deposit must be at least 30% of total cost.");
+                if (depositPaid <= 0) {
+                    System.out.println("Deposit must be greater than 0.");
                 } else {
                     break;
                 }
 
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Deposit must be a number.");
+                scan.next(); // clear invalid input
             }
         }
+
+    System.out.println("\nRental Information Captured Successfully.");
 
         // Save rental record
         saveRentalRecord(
