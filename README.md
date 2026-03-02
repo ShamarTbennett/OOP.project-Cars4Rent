@@ -56,13 +56,17 @@ Extends Vehicle with bike-specific features:
   - `Display()` - Custom display format for bikes
 
 #### Rental.java
-Extends Vehicle to handle rental operations:
+Extends Vehicle to handle rental operations and track customer rentals:
 - **Properties**: Interior Type, Number of Helmets, Towing Capacity (supports all vehicle types)
 - **Key Methods**:
   - `viewvehicles()` - Displays all vehicles in the system
   - `searchAvailableVehicles(String)` - Searches for available vehicles by brand, model, license plate, year, or interior type
   - `updateVehicleStatus(String licenseNumber, String newStatus)` - Updates rental status (Available/Rented)
   - `Display()` - Unified display format for all vehicle types
+  - `saveRentalRecord(...)` - Appends a rental transaction to `RentalRecords.txt` with customer details, dates, and deposit
+  - `getRentalInformation()` - Interactive prompt to collect and validate rental details from the user (plate, name, address, phone, dates, deposit) then saves the record and marks the vehicle as rented
+  - `validatePlateAvailable(String)` - Helper used by `getRentalInformation()` to ensure the chosen plate exists and is currently available
+  - Overrides `toString()` for debugging/logging purposes
 
 #### Driver.java
 Main entry point for the application:
@@ -98,6 +102,8 @@ The system includes:
 ✅ **Rental Operations**
 - Update vehicle rental status
 - Track vehicle availability
+- Collect and validate customer rental information (including dates and deposit)
+- Save rental transactions to `RentalRecords.txt` for later review
 
 ## Usage Example
 
@@ -110,10 +116,15 @@ r.viewvehicles();
 // Search for available vehicles
 r.searchAvailableVehicles("Toyota");
 
-// Update vehicle rental status
+// Update vehicle rental status directly
 r.updateVehicleStatus("6708CP", "Rented");
-```
 
+// Capture a new rental from user input (prompts for plate, name, dates, deposit, etc.)
+r.getRentalInformation();
+
+// Alternatively you can save a rental record programmatically:
+r.saveRentalRecord("6708CP", "Jane Doe", "123 Main St", "5551234567", "2026-03-01", "2026-03-05", 100.0);
+```
 ## Future Enhancements
 
 - Implement interactive menu system (currently commented in Driver.java)
