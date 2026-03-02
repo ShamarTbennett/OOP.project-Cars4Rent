@@ -374,7 +374,7 @@ public class Rental extends Vehicle {
                 scan.next(); // clear invalid input
             }
         }
-
+        scan.close();
     System.out.println("\nRental Information Captured Successfully.");
 
         // Save rental record
@@ -394,7 +394,7 @@ public class Rental extends Vehicle {
         System.out.println("\nVehicle successfully rented.");
     }
       
-    
+
     public boolean validatePlateAvailable(String plateNumber) {
 
     try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
