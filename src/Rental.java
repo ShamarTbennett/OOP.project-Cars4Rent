@@ -286,7 +286,7 @@ public class Rental extends Vehicle {
         LocalDate returnDate = null;
         double depositPaid = 0;
 
-        scan.nextLine(); // clear buffer (important)
+        scan.nextLine(); // clear buffer 
 
         // Plate
         while (true) {
@@ -301,7 +301,7 @@ public class Rental extends Vehicle {
             }
             // Check if plate exists and is available
             if (validatePlateAvailable(plate)) {
-                break;   // ✅ Valid plate → move on
+                break;   //Validates plate → move on
             }
 
             System.out.println("Please enter a valid and available plate number.\n");
@@ -375,7 +375,7 @@ public class Rental extends Vehicle {
             }
         }
         scan.close();
-    System.out.println("\nRental Information Captured Successfully.");
+        System.out.println("\nRental Information Captured Successfully.");
 
         // Save rental record
         saveRentalRecord(
