@@ -4,7 +4,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.format.DateTimeParseException;
 public class Rental extends Vehicle {
     private String  interiortype;
     private int numberOfHelmets;
@@ -273,30 +275,122 @@ public class Rental extends Vehicle {
     }
 
 
-    public void getRentalInformation(){
+
+
+    public void getRentalInformation() {
+
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter the plate number");
-        String plate = scan.next();
+        String plate;
+        String name;
+        String address;
+        String phoneNumber;
+        LocalDate dateRented = LocalDate.now();
+        LocalDate returnDate = null;
+        double depositPaid = 0;
 
-        System.out.println("Enter the your full name without space");
-        String name = scan.next();
+        scan.nextLine(); // clear buffer (important)
 
-        System.out.print("Enter your address (no space): ");
-        String address = scan.next();
-        
-        System.out.print("Enter your phone number: ");
-        String phoneNumber = scan.next();
+        // Plate
+        while (true) {
+            System.out.print("Enter the plate number: ");
+            plate = scan.nextLine().trim();
+            if (!plate.isEmpty()) break;
+            System.out.println("Plate number cannot be empty.");
+        }
 
-        //use the built in date an time method here
-        System.out.print("");
-  
-        System.out.print("Return date: ");
-        //expectedreturndate = 
+        // Full Name (with spaces)
+        while (true) {
+            System.out.print("Enter your full name: ");
+            name = scan.nextLine().trim();
+            if (!name.matches("[a-zA-Z ]+")) {
+                System.out.println("Name must contain only letters.");
+            } else {
+                break;
+            }
+        }
 
-         System.out.print("Depost amount: ");
-         int depositPaid = scan.nextInt();
+        // Address (with spaces)
+        while (true) {
+            System.out.print("Enter your address: ");
+            address = scan.nextLine().trim();
+            if (!address.isEmpty()) break;
+            System.out.println("Address cannot be empty.");
+        }
 
+        // Phone number validation
+        while (true) {
+            System.out.print("Enter your phone number: ");
+            phoneNumber = scan.nextLine().trim();
+            if (!phoneNumber.matches("\\d{7,12}")) {
+                System.out.println("Phone number must contain 7–12 digits.");
+            } else {
+                break;
+            }
+        }
+
+        System.out.println("Date Rented: " + dateRented);
+
+        // Return date validation
+        while (true) {
+            try {
+                System.out.print("Enter return date (YYYY-MM-DD): ");
+                returnDate = LocalDate.parse(scan.nextLine());
+
+                if (!returnDate.isAfter(dateRented)) {
+                    System.out.println("Return date must be after today.");
+                } else {
+                    break;
+                }
+
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date format. Use YYYY-MM-DD.");
+            }
+        }
+
+        // Calculate rental days
+        long days = ChronoUnit.DAYS.between(dateRented, returnDate);
+
+        // Calculate total cost
+        double totalCost = days * ratePerDay;
+
+        System.out.println("Rental Days: " + days);
+        System.out.println("Total Cost: $" + totalCost);
+
+        double minimumDeposit = totalCost * 0.30;
+
+        // Deposit validation
+        while (true) {
+            try {
+                System.out.print("Deposit amount (minimum 30% = $" + minimumDeposit + "): ");
+                depositPaid = Double.parseDouble(scan.nextLine());
+
+                if (depositPaid < minimumDeposit) {
+                    System.out.println("Deposit must be at least 30% of total cost.");
+                } else {
+                    break;
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("Deposit must be a number.");
+            }
+        }
+
+        // Save rental record
+        saveRentalRecord(
+                plate,
+                name,
+                address,
+                phoneNumber,
+                dateRented.toString(),
+                returnDate.toString(),
+                depositPaid
+        );
+
+        // Update vehicle status
+        updateVehicleStatus(plate, "Rented");
+
+        System.out.println("\nVehicle successfully rented.");
     }
-    
+        
 }
