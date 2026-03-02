@@ -293,10 +293,21 @@ public class Rental extends Vehicle {
 
         // Plate
         while (true) {
+
             System.out.print("Enter the plate number: ");
             plate = scan.nextLine().trim();
-            if (!plate.isEmpty()) break;
-            System.out.println("Plate number cannot be empty.");
+
+            // Check empty
+            if (plate.isEmpty()) {
+                System.out.println("Plate number cannot be empty.");
+                continue;
+            }
+            // Check if plate exists and is available
+            if (validatePlateAvailable(plate)) {
+                break;   // ✅ Valid plate → move on
+            }
+
+            System.out.println("Please enter a valid and available plate number.\n");
         }
 
         // Full Name (with spaces)
