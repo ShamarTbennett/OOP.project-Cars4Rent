@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.time.format.DateTimeParseException;
 public class Rental extends Vehicle {
     private String  interiortype;
@@ -173,7 +172,6 @@ public class Rental extends Vehicle {
         }
     }
 
-
     @Override
     public void Display() {
 
@@ -286,7 +284,6 @@ public class Rental extends Vehicle {
         LocalDate returnDate = null;
         double depositPaid = 0;
 
-        scan.nextLine(); // clear buffer 
 
         // Plate
         while (true) {
@@ -397,33 +394,35 @@ public class Rental extends Vehicle {
 
     public boolean validatePlateAvailable(String plateNumber) {
 
-    try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
+        try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
 
-        while (reader.hasNextLine()) {
+            while (reader.hasNextLine()) {
 
-            String line = reader.nextLine().trim();
-            if (line.isEmpty()) continue;
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
 
-            String[] parts = line.split("\\s+");
+                String[] parts = line.split("\\s+");
 
-            if (parts[0].equalsIgnoreCase(plateNumber)) {
+                if (parts[0].equalsIgnoreCase(plateNumber)) {
 
-                String status = parts[parts.length - 1];
+                    String status = parts[parts.length - 1];
 
-                if (status.equalsIgnoreCase("Available")) {
-                    return true;   // Plate exists and is available
-                } else {
-                    System.out.println("Vehicle is already rented.");
-                    return false;
+                    if (status.equalsIgnoreCase("Available")) {
+                        return true;   // Plate exists and is available
+                    } else {
+                        System.out.println("Vehicle is already rented.");
+                        return false;
+                    }
                 }
             }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Vehicle.txt not found.");
         }
 
-    } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt not found.");
+        System.out.println("Plate number does not exist.");
+        return false;
     }
 
-    System.out.println("Plate number does not exist.");
-    return false;
-}
+    
 }
