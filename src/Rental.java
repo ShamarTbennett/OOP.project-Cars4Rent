@@ -242,8 +242,8 @@ public class Rental extends Vehicle {
             tempFile.renameTo(inputFile);
         }
     }
+   
 
-        
     public void saveRentalRecord(String licensePlate, String customerName,
                                 String address, String phone,
                                 String dateRented, String expectedReturn,
@@ -395,6 +395,7 @@ public class Rental extends Vehicle {
         System.out.println("\nVehicle successfully rented.");
     }
       
+
     public boolean canRentMoreVehicles(String customerName) {
 
         int rentalCount = 0;
@@ -413,7 +414,6 @@ public class Rental extends Vehicle {
 
                 if (nameFromFile.equalsIgnoreCase(customerName)
                         && status.equalsIgnoreCase("Active")) {
-
                     rentalCount++;
                 }
             }
@@ -431,6 +431,7 @@ public class Rental extends Vehicle {
         return true;
     }
 
+    
     public boolean validatePlateAvailable(String plateNumber) {
 
         try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
