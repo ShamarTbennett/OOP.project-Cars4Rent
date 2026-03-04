@@ -253,13 +253,16 @@ public class Rental extends Vehicle {
 
             FileWriter instream = new FileWriter("RentalRecords.txt", true);
 
+            String status = "Active";   // ✅ default when renting
+
             String rental = licensePlate + "\t\t" +
                             customerName + "\t\t" +
                             address + "\t\t" +
                             phone + "\t\t" +
                             dateRented + "\t\t" +
                             expectedReturn + "\t\t" +
-                            depositPaid + "\n";
+                            depositPaid + "\t\t" +
+                            status + "\n";
 
             instream.write(rental);
             instream.close();
@@ -308,6 +311,7 @@ public class Rental extends Vehicle {
         while (true) {
             System.out.print("Enter your full name: ");
             name = scan.nextLine().trim();
+            canRentMoreVehicles(name);
             if (!name.matches("[a-zA-Z ]+")) {
                 System.out.println("Name must contain only letters.");
             } else {
@@ -391,6 +395,41 @@ public class Rental extends Vehicle {
         System.out.println("\nVehicle successfully rented.");
     }
       
+    public boolean canRentMoreVehicles(String customerName) {
+
+        int rentalCount = 0;
+
+        try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
+
+            while (reader.hasNextLine()) {
+
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] parts = line.split("\\|");
+
+                String nameFromFile = parts[1].trim();
+                String status = parts[7].trim();   // last column (Active/Returned)
+
+                if (nameFromFile.equalsIgnoreCase(customerName)
+                        && status.equalsIgnoreCase("Active")) {
+
+                    rentalCount++;
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("RentalRecords.txt not found.");
+        }
+
+        if (rentalCount >= 3) {
+            System.out.println("You already have " + rentalCount + " active rentals.");
+            System.out.println("You cannot rent more than 3 vehicles at a time.");
+            return false;
+        }
+
+        return true;
+    }
 
     public boolean validatePlateAvailable(String plateNumber) {
 
