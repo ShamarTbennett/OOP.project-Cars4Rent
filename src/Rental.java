@@ -307,16 +307,21 @@ public class Rental extends Vehicle {
             System.out.println("Please enter a valid and available plate number.\n");
         }
 
-        // Full Name (with spaces)
         while (true) {
             System.out.print("Enter your full name: ");
             name = scan.nextLine().trim();
-            canRentMoreVehicles(name);
+
             if (!name.matches("[a-zA-Z ]+")) {
                 System.out.println("Name must contain only letters.");
-            } else {
-                break;
+                continue;
             }
+
+            // 🔥 Check rental limit AFTER validating name
+            if (!canRentMoreVehicles(name)) {
+                System.out.println("Rental limit reached. Cannot proceed.");
+                return; // or break depending on your structure
+            }
+            break;
         }
 
         // Address (with spaces)
@@ -407,10 +412,17 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] parts = line.split("\\|");
+                // 🔥 Correct split for TAB-separated file
+                String[] parts = line.split("\\t+");
+
+                // Safety check
+                if (parts.length < 8) {
+                    System.out.println("Skipping malformed line: " + line);
+                    continue;
+                }
 
                 String nameFromFile = parts[1].trim();
-                String status = parts[7].trim();   // last column (Active/Returned)
+                String status = parts[7].trim();
 
                 if (nameFromFile.equalsIgnoreCase(customerName)
                         && status.equalsIgnoreCase("Active")) {
@@ -431,7 +443,7 @@ public class Rental extends Vehicle {
         return true;
     }
 
-    
+
     public boolean validatePlateAvailable(String plateNumber) {
 
         try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
