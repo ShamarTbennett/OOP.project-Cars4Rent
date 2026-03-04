@@ -56,7 +56,8 @@ public class Driver {
             System.out.println("2. Trucks");
             System.out.println("3. Bikes");
             System.out.println("4. All Vehicles");
-            System.out.println("5. Return to Main Menu");
+            System.out.println("5. Rent a Vehicle");
+            System.out.println("6. Return to Main Menu");
             System.out.print("Select an option: ");
             viewChoice = scanner.nextInt();
 
@@ -82,13 +83,16 @@ public class Driver {
                     v.viewvehicles();
                     break;
                 case 5:
+                    Rental r = new Rental();
+                    r.getRentalInformation();
+                case 6:
                     System.out.println("\nReturning to Main Menu...");
                     break;
                 default:
                     System.out.println("\nInvalid selection.");
             }
 
-        } while (viewChoice != 5);
+        } while (viewChoice != 6);
     }
 
     

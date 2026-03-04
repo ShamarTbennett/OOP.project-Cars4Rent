@@ -287,7 +287,7 @@ public class Rental extends Vehicle {
 
         // Plate
         while (true) {
-
+            System.out.println();
             System.out.print("Enter the plate number: ");
             plate = scan.nextLine().trim();
 
