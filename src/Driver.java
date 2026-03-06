@@ -5,10 +5,7 @@ public class Driver {
 
 
         Rental r = new Rental();
-        //r.updateVehicleStatus("6708CP", "Rented");
-        //r.searchAvailableVehicles("Toyota");
-        //r.viewvehicles();
-
+   
         Scanner scanner = new Scanner(System.in);
         int choice;
 
