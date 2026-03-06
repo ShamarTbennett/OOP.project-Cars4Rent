@@ -78,6 +78,7 @@ public class Rental extends Vehicle {
                 }
 
                 this.rentalStatus = p[i];
+                if (!rentalStatus.equalsIgnoreCase("Available")) continue;  
 
                 Display();
             }

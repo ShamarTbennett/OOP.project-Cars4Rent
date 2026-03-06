@@ -24,10 +24,11 @@ public class Driver {
                     showViewMenu(scanner);
                     break;
                 case 2:
-                    showViewMenu(scanner);
+                    System.out.println("myrentals");
+                    //showViewMenu(scanner);
                     break;
                  case 3:
-                    showViewMenu(scanner);
+                    //showViewMenu(scanner);
                     break;
                 case 4:
                     System.out.println("Exiting program...");
