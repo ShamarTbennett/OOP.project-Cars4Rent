@@ -72,6 +72,7 @@ public class Rental extends Vehicle {
                 }
                 else if (type.equalsIgnoreCase("Truck")) {
                     this.towingCapacity = (int) Double.parseDouble(p[i++]);
+                    this.interiortype = p[i++];
                 }
                 else if (type.equalsIgnoreCase("Bike")) {
                     this.numberOfHelmets = Integer.parseInt(p[i++]);
