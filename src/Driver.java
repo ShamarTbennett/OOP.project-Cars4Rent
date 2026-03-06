@@ -25,7 +25,7 @@ public class Driver {
                     break;
                 case 2:
                     System.out.println("myrentals");
-                    //showViewMenu(scanner);
+                    showMyRentalsMenu(scanner);
                     break;
                  case 3:
                     //showViewMenu(scanner);
@@ -93,6 +93,34 @@ public class Driver {
         } while (viewChoice != 6);
     }
 
-    
+    public static void showMyRentalsMenu(Scanner scanner) {
+        int myRentalsChoice;
+
+        do {
+            System.out.println("\n--- MY RENTALS ---");
+            System.out.println("1. View My Rentals");
+            System.out.println("2. Return a Vehicle");
+            System.out.println("3. Back to Main Menu");
+            System.out.print("Select an option: ");
+            myRentalsChoice = scanner.nextInt();
+
+            switch (myRentalsChoice) {
+                case 1:
+                    System.out.println("\nDisplaying My Rentals...");
+                    // Implement logic to display user's rentals
+                    break;
+                case 2:
+                    System.out.println("\nReturning a Vehicle...");
+                    // Implement logic to return a vehicle
+                    break;
+                case 3:
+                    System.out.println("\nReturning to Main Menu...");
+                    break;
+                default:
+                    System.out.println("\nInvalid selection.");
+            }
+
+        } while (myRentalsChoice != 3);
+    }
     
 }
