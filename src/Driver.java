@@ -5,6 +5,7 @@ public class Driver {
 
 
         /// add another fild to the rent file , ther should be three types of dates current rent date, expected rturn, actual return date
+        /// fix the search method
         Rental r = new Rental();
    
         Scanner scanner = new Scanner(System.in);
@@ -15,8 +16,9 @@ public class Driver {
             System.out.println("\n=== MAIN MENU ===");
             System.out.println("1. View Vehicles");
             System.out.println("2. My Rentals ");
-            System.out.println("3. Return Vehicle"); 
-            System.out.println("4. Exit");
+            System.out.println("3. Search for Vehicle: ");
+            System.out.println("4. Return Vehicle"); 
+            System.out.println("5. Exit");
             System.out.print("Select an option: ");
             choice = scanner.nextInt();
             scanner.nextLine();
@@ -32,7 +34,10 @@ public class Driver {
                     r.viewMyRentals(name);
                     break;
                  case 3:
-                    //showViewMenu(scanner);
+                    System.out.println("Enter car detail: ");
+                    Scanner sear = new Scanner(System.in);
+                    String detail = sear.next();
+                    r.searchAvailableVehicles(detail);
                     break;
                 case 4:
                     System.out.println("Exiting program...");
@@ -41,7 +46,7 @@ public class Driver {
                     System.out.println("Invalid choice. Try again.");
             }
 
-        } while (choice != 4);
+        } while (choice != 5);
 
             scanner.close();
     }
@@ -96,37 +101,5 @@ public class Driver {
 
         } while (viewChoice != 6);
     }
-
-    /*public static void showMyRentalsMenu(Scanner scanner) {
-        int myRentalsChoice;
-
-        do {
-            System.out.println("\n--- MY RENTALS ---");
-            System.out.println("1. View My Rentals");
-            System.out.println("2. Return a Vehicle");
-            System.out.println("3. Back to Main Menu");
-            System.out.print("Select an option: ");
-            myRentalsChoice = scanner.nextInt();
-
-            switch (myRentalsChoice) {
-                case 1:
-                    System.out.println("\nDisplaying My Rentals...");
-                    // Implement logic to display user's rentals
-                    break;
-                case 2:
-                    System.out.println("\nReturning a Vehicle...");
-                    // Implement logic to return a vehicle
-                    break;
-                case 3:
-                    System.out.println("\nReturning to Main Menu...");
-                    break;
-                default:
-                    System.out.println("\nInvalid selection.");
-            }
-
-        } while (myRentalsChoice != 3);
-    }
-    */
-
 
 }

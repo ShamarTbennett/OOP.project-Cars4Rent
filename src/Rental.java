@@ -163,9 +163,10 @@ public class Rental extends Vehicle {
 
                 if (match) {
                     //System.out.println(v);
-                    v.Display(); // prints EACH matching vehicl             
-                    
-                    
+                    v.Display(); // prints EACH matching vehicle
+                    System.out.println("5. Rent a Vehicle");
+                    getRentalInformation();            
+                    return;
                 }
             }
 
@@ -400,6 +401,7 @@ public class Rental extends Vehicle {
         updateVehicleStatus(plate, "Rented");
 
         System.out.println("\nVehicle successfully rented.");
+        return;
     }
       
 
@@ -536,6 +538,7 @@ public class Rental extends Vehicle {
                 System.out.println("Total Rentals: " + totalRentals);
                 System.out.println("Active Rentals: " + activeRentals);
                 System.out.println("Returned Rentals: " + returnedRentals);
+                return;
             }
 
         } catch (FileNotFoundException e) {
