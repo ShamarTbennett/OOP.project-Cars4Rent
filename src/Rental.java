@@ -479,4 +479,68 @@ public class Rental extends Vehicle {
     }
 
     
+    public void viewMyRentals(String customerName) {
+
+        boolean found = false;
+        int totalRentals = 0;
+        int activeRentals = 0;
+        int returnedRentals = 0;
+
+        try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
+
+            System.out.println("Plate\tName\t\tAddress\t\tPhone\t\tDate Rented\tReturn Date\tDeposit\tStatus");
+            System.out.println("------------------------------------------------------------------------------------------------");
+
+            while (reader.hasNextLine()) {
+
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] parts = line.split("\\t+");
+
+                if (parts.length < 8) continue;
+
+                String nameFromFile = parts[1].trim();
+                String status = parts[7].trim();
+
+                if (nameFromFile.equalsIgnoreCase(customerName)) {
+
+                    System.out.println(
+                            parts[0] + "\t" +
+                            parts[1] + "\t" +
+                            parts[2] + "\t" +
+                            parts[3] + "\t" +
+                            parts[4] + "\t" +
+                            parts[5] + "\t" +
+                            parts[6] + "\t" +
+                            parts[7]
+                    );
+
+                    totalRentals++;
+
+                    if (status.equalsIgnoreCase("Active")) {
+                        activeRentals++;
+                    } else if (status.equalsIgnoreCase("Returned")) {
+                        returnedRentals++;
+                    }
+
+                    found = true;
+                }
+            }
+
+            if (!found) {
+                System.out.println("No rentals found for: " + customerName);
+            } else {
+
+                System.out.println("\n------ Rental Summary ------");
+                System.out.println("Total Rentals: " + totalRentals);
+                System.out.println("Active Rentals: " + activeRentals);
+                System.out.println("Returned Rentals: " + returnedRentals);
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("RentalRecords.txt not found.");
+        }
+    }
+    
 }
