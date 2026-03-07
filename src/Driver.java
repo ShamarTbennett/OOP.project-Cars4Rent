@@ -25,7 +25,7 @@ public class Driver {
                     break;
                 case 2:
                     System.out.println("myrentals");
-                    showMyRentalsMenu(scanner);
+                    //showMyRentalsMenu(scanner);
                     break;
                  case 3:
                     //showViewMenu(scanner);
@@ -93,7 +93,7 @@ public class Driver {
         } while (viewChoice != 6);
     }
 
-    public static void showMyRentalsMenu(Scanner scanner) {
+    /*public static void showMyRentalsMenu(Scanner scanner) {
         int myRentalsChoice;
 
         do {
@@ -122,5 +122,7 @@ public class Driver {
 
         } while (myRentalsChoice != 3);
     }
-    
+    */
+
+
 }
