@@ -503,7 +503,7 @@ public class Rental extends Vehicle {
                 String nameFromFile = parts[1].trim();
                 String status = parts[7].trim();
 
-                if (nameFromFile.equalsIgnoreCase(customerName)) {
+               if (nameFromFile.toLowerCase().contains(customerName.toLowerCase())) {
 
                     System.out.println(
                             parts[0] + "\t" +

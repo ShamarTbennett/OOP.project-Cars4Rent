@@ -19,14 +19,17 @@ public class Driver {
             System.out.println("4. Exit");
             System.out.print("Select an option: ");
             choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     showViewMenu(scanner);
                     break;
                 case 2:
-                    System.out.println("myrentals");
-                    //showMyRentalsMenu(scanner);
+                    System.out.println();
+                    System.out.println("Enter your name: ");
+                    String name = scanner.next();
+                    r.viewMyRentals(name);
                     break;
                  case 3:
                     //showViewMenu(scanner);
