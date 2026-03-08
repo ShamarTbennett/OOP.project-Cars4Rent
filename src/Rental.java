@@ -405,6 +405,8 @@ public class Rental extends Vehicle {
     }
       
 
+
+
     public boolean canRentMoreVehicles(String customerName) {
 
         int rentalCount = 0;
