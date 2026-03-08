@@ -319,7 +319,7 @@ public class Rental extends Vehicle {
                 continue;
             }
 
-            // 🔥 Check rental limit AFTER validating name
+            //  Check rental limit AFTER validating name
             if (!canRentMoreVehicles(name)) {
                 System.out.println("Rental limit reached. Cannot proceed.");
                 return; // or break depending on your structure
