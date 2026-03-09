@@ -33,22 +33,27 @@ public class Driver {
                     String name = scanner.next();
                     r.viewMyRentals(name);
                     break;
-                 case 3:
+                case 3:
                     System.out.println("Enter car detail: ");
-                    Scanner sear = new Scanner(System.in);
-                    String detail = sear.next();
+                    String detail = scanner.next(); // use existing scanner
                     r.searchAvailableVehicles(detail);
                     break;
+
                 case 4:
+                    System.out.println("Return vehicle feature coming soon...");
+                    break;
+
+                case 5:
                     System.out.println("Exiting program...");
                     break;
+
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
 
         } while (choice != 5);
 
-            scanner.close();
+        scanner.close();
     }
 
     // Sub-menu with return option
