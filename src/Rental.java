@@ -106,7 +106,7 @@ public class Rental extends Vehicle {
     public void searchAvailableVehicles(String userInput) {
 
         String search = userInput.trim().toLowerCase();
-        boolean found = false; // track matches
+        boolean found = false;
 
         try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
@@ -117,7 +117,10 @@ public class Rental extends Vehicle {
                 String[] p = line.split("\\s+");
                 int i = 0;
 
-                Rental v = new Rental(); // new object per vehicle
+                //  Skip broken lines
+                if (p.length < 13) continue;
+
+                Rental v = new Rental();
 
                 v.licenseNum = p[i++];
                 v.type = p[i++];
@@ -137,20 +140,21 @@ public class Rental extends Vehicle {
                 v.numberOfHelmets = 0;
                 v.interiortype = "None";
 
-                // type-specific fields
-                if (v.type.equalsIgnoreCase("Car")) {
+                // ✅ SAFE type-specific parsing
+                if (v.type.equalsIgnoreCase("Car") && i < p.length) {
                     v.interiortype = p[i++];
                 }
-                else if (v.type.equalsIgnoreCase("Truck")) {
+                else if (v.type.equalsIgnoreCase("Truck") && i + 1 < p.length) {
                     v.towingCapacity = Integer.parseInt(p[i++]);
                     v.interiortype = p[i++];
                 }
-                else if (v.type.equalsIgnoreCase("Bike")) {
+                else if (v.type.equalsIgnoreCase("Bike") && i + 1 < p.length) {
                     v.numberOfHelmets = Integer.parseInt(p[i++]);
                     v.interiortype = p[i++];
                 }
 
-                // rental status
+                // ✅ SAFE rental status read
+                if (i >= p.length) continue;
                 v.rentalStatus = p[i];
 
                 if (!v.rentalStatus.equalsIgnoreCase("Available")) continue;
@@ -164,12 +168,13 @@ public class Rental extends Vehicle {
 
                 if (match) {
                     v.Display();
-                    System.out.println("-------------------------------------------------------------------------------------------------------"+
+                    System.out.println("-------------------------------------------------------------------------------------------------------" +
                                     "-----------------------------------------------------------------------------------------------------");
                     found = true;
                 }
             }
 
+            // ✅ MENU
             if (found) {
                 Scanner input = new Scanner(System.in);
 
@@ -193,13 +198,14 @@ public class Rental extends Vehicle {
                 } else {
                     System.out.println("Invalid input. Returning to main menu.");
                 }
+            } else {
+                System.out.println("No available vehicles match your search.");
             }
 
         } catch (FileNotFoundException e) {
             System.out.println("Vehicle.txt was not found.");
         }
     }
-
     
     @Override
     public void Display() {
