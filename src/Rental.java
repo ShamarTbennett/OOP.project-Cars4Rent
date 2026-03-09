@@ -103,9 +103,10 @@ public class Rental extends Vehicle {
     }
 
 
-    /*public void searchAvailableVehicles(String userInput) {
+    public void searchAvailableVehicles(String userInput) {
 
         String search = userInput.trim().toLowerCase();
+        boolean found = false; // track matches
 
         try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
 
@@ -116,7 +117,7 @@ public class Rental extends Vehicle {
                 String[] p = line.split("\\s+");
                 int i = 0;
 
-                Rental v = new Rental(); // NEW OBJECT PER LINE
+                Rental v = new Rental(); // new object per vehicle
 
                 v.licenseNum = p[i++];
                 v.type = p[i++];
@@ -136,7 +137,7 @@ public class Rental extends Vehicle {
                 v.numberOfHelmets = 0;
                 v.interiortype = "None";
 
-                // read type-specific field
+                // type-specific fields
                 if (v.type.equalsIgnoreCase("Car")) {
                     v.interiortype = p[i++];
                 }
@@ -162,11 +163,35 @@ public class Rental extends Vehicle {
                         String.valueOf(v.year).equals(search);
 
                 if (match) {
-                    //System.out.println(v);
-                    v.Display(); // prints EACH matching vehicle
-                    System.out.println("5. Rent a Vehicle");
-                    getRentalInformation();            
-                    return;
+                    v.Display();
+                    System.out.println("-------------------------------------------------------------------------------------------------------"+
+                                    "-----------------------------------------------------------------------------------------------------");
+                    found = true;
+                }
+            }
+
+            if (found) {
+                Scanner input = new Scanner(System.in);
+
+                System.out.println("\n===== MENU =====");
+                System.out.println("1. Rent a Vehicle");
+                System.out.println("2. Return to Main Menu");
+                System.out.print("Choose an option: ");
+
+                if (input.hasNextInt()) {
+                    int choice = input.nextInt();
+
+                    switch (choice) {
+                        case 1:
+                            getRentalInformation();
+                            break;
+                        case 2:
+                            return;
+                        default:
+                            System.out.println("Invalid choice. Returning to main menu.");
+                    }
+                } else {
+                    System.out.println("Invalid input. Returning to main menu.");
                 }
             }
 
@@ -174,87 +199,6 @@ public class Rental extends Vehicle {
             System.out.println("Vehicle.txt was not found.");
         }
     }
-*/
-    
-
-    public void searchAvailableVehicles(String userInput) {
-
-    String search = userInput.trim().toLowerCase();
-    boolean found = false; // track matches
-
-    try (Scanner infileStream = new Scanner(new File("Vehicle.txt"))) {
-
-        while (infileStream.hasNextLine()) {
-            String line = infileStream.nextLine().trim();
-            if (line.isEmpty()) continue;
-
-            String[] p = line.split("\\s+");
-            int i = 0;
-
-            Rental v = new Rental(); // new object per vehicle
-
-            v.licenseNum = p[i++];
-            v.type = p[i++];
-            v.brand = p[i++];
-            v.model = p[i++];
-            v.year = Integer.parseInt(p[i++]);
-            v.color = p[i++];
-            v.engineSize = Double.parseDouble(p[i++]);
-            v.fueltype = p[i++];
-            v.transmissiontype = p[i++];
-            v.mileage = Integer.parseInt(p[i++]);
-            v.seatCapacity = Integer.parseInt(p[i++]);
-            v.ratesPerday = Integer.parseInt(p[i++]);
-
-            // reset optional fields
-            v.towingCapacity = 0;
-            v.numberOfHelmets = 0;
-            v.interiortype = "None";
-
-            // type-specific fields
-            if (v.type.equalsIgnoreCase("Car")) {
-                v.interiortype = p[i++];
-            }
-            else if (v.type.equalsIgnoreCase("Truck")) {
-                v.towingCapacity = Integer.parseInt(p[i++]);
-                v.interiortype = p[i++];
-            }
-            else if (v.type.equalsIgnoreCase("Bike")) {
-                v.numberOfHelmets = Integer.parseInt(p[i++]);
-                v.interiortype = p[i++];
-            }
-
-            // rental status
-            v.rentalStatus = p[i];
-
-            if (!v.rentalStatus.equalsIgnoreCase("Available")) continue;
-
-            boolean match =
-                    v.licenseNum.toLowerCase().contains(search) ||
-                    v.brand.toLowerCase().contains(search) ||
-                    v.model.toLowerCase().contains(search) ||
-                    v.interiortype.toLowerCase().contains(search) ||
-                    String.valueOf(v.year).equals(search);
-
-            if (match) {
-                v.Display();
-                System.out.println("-------------------------------------------------------------------------------------------------------"+
-                                   "-----------------------------------------------------------------------------------------------------");
-                found = true;
-            }
-        }
-
-        if (found) {
-            System.out.println("5. Rent a Vehicle");
-            getRentalInformation();
-        } else {
-            System.out.println("No available vehicles match your search.");
-        }
-
-    } catch (FileNotFoundException e) {
-        System.out.println("Vehicle.txt was not found.");
-    }
-}
 
     
     @Override
