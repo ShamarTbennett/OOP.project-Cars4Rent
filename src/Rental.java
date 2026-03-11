@@ -167,7 +167,7 @@ public class Rental extends Vehicle {
 
                 if (match) {
                     v.Display();
-                    System.out.println("-------------------------------------------------------------------------------------------------------" +
+                    System.out.println("--------------------------------------------------------------------------------------------------" +
                                     "-----------------------------------------------------------------------------------------------------");
                     found = true;
                 }
@@ -325,7 +325,7 @@ public class Rental extends Vehicle {
         // Plate
         while (true) {
             System.out.println();
-            System.out.print("Enter the plate number: ");
+            System.out.println("Enter the plate number: ");
             plate = scan.nextLine().trim();
 
             // Check empty
@@ -435,8 +435,6 @@ public class Rental extends Vehicle {
         return;
     }
       
-
-
 
     public boolean canRentMoreVehicles(String customerName) {
 

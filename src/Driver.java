@@ -34,6 +34,7 @@ public class Driver {
                     r.viewMyRentals(name);
                     break;
                 case 3:
+                    System.out.println();
                     System.out.println("Enter car detail: ");
                     String detail = scanner.next();
                     r.searchAvailableVehicles(detail);
