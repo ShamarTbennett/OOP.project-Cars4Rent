@@ -140,7 +140,7 @@ public class Rental extends Vehicle {
                 v.numberOfHelmets = 0;
                 v.interiortype = "None";
 
-                // ✅ SAFE type-specific parsing
+                // SAFE type-specific parsing
                 if (v.type.equalsIgnoreCase("Car") && i < p.length) {
                     v.interiortype = p[i++];
                 }
@@ -148,9 +148,8 @@ public class Rental extends Vehicle {
                     v.towingCapacity = Integer.parseInt(p[i++]);
                     v.interiortype = p[i++];
                 }
-                else if (v.type.equalsIgnoreCase("Bike") && i + 1 < p.length) {
+                else if (v.type.equalsIgnoreCase("Bike") && i < p.length) {
                     v.numberOfHelmets = Integer.parseInt(p[i++]);
-                    v.interiortype = p[i++];
                 }
 
                 // ✅ SAFE rental status read
@@ -174,7 +173,7 @@ public class Rental extends Vehicle {
                 }
             }
 
-            // ✅ MENU
+            // MENU
             if (found) {
                 Scanner input = new Scanner(System.in);
 
