@@ -577,4 +577,36 @@ public class Rental extends Vehicle {
         }
     }
     
+
+
+
+
+
+    public boolean validatePlateInRentals(String plateNumber) {
+       
+        File rentalsFile = new File("RentalRecords.txt");
+
+        try (Scanner reader = new Scanner(rentalsFile)) {
+
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] parts = line.split("\\s+");
+                // Assuming first field is license plate
+                if (parts[0].equalsIgnoreCase(plateNumber)) {
+                    System.out.println("Vehicle is found in your rentals.");
+                    return true; // Plate exists in rentals
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("MyRentals.txt not found.");
+        }
+
+        System.out.println("Plate number not found in your rentals.");
+        return false;
+    }
+
+
 }
