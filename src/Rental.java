@@ -528,7 +528,7 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] parts = line.split("\\t+");
+                String[] parts = line.split("\\s+");
 
                 if (parts.length < 8) continue;
 
@@ -622,7 +622,6 @@ public class Rental extends Vehicle {
         System.out.println("Plate number not found in your rentals.");
         return false;
     }
-
 
     public void updateRentalRecord(String licenseNumber, String newStatus) {
         File inputFile = new File("RentalRecords.txt");

@@ -17,12 +17,6 @@ public class Driver {
         //r.updateRentalRecord("7752bi", "Returned");
         //r.viewMyRentals("Shamar bennett");
 
-
-
-
-
-
-   
         Scanner scanner = new Scanner(System.in);
         int choice;
 
