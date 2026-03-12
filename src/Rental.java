@@ -233,7 +233,6 @@ public class Rental extends Vehicle {
     }
 
     // This method can be implemented to update the rental status of a vehicle
-    // For example, it could read the Vehicle.txt file, find the matching license number,
     // and update the rentalStatus field to "Rented" or "Available" as needed.
     public void updateVehicleStatus(String licenseNumber, String newStatus) {
         File inputFile = new File("Vehicle.txt");
@@ -594,7 +593,7 @@ public class Rental extends Vehicle {
         int currentMileage = input.nextInt();
         input.nextLine();
 
-        
+
         input.close();
     }
 
@@ -625,4 +624,47 @@ public class Rental extends Vehicle {
     }
 
 
+    public void updateRentalRecord(String licenseNumber, String newStatus) {
+        File inputFile = new File("RentalRecords.txt");
+        File tempFile = new File("TempRentals.txt");
+
+        try (Scanner reader = new Scanner(inputFile);
+            PrintWriter writer = new PrintWriter(tempFile)) {
+
+            boolean updated = false;
+
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] parts = line.split("\\t+");
+
+                // License number is assumed to be the first field
+                if (parts[0].equalsIgnoreCase(licenseNumber)) {
+                    // Update the rental status (assume last field is status)
+                    parts[parts.length - 1] = newStatus;
+                    updated = true;
+                    System.out.println("Rental record updated successfully.");
+                }
+
+                // Rebuild the line and write to temp file
+                String updatedLine = String.join(" ", parts);
+                writer.println(updatedLine);
+            }
+
+            if (!updated) {
+                System.out.println("License number not found in rental records.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error updating rental records.");
+            e.printStackTrace();
+            return;
+        }
+
+        // Replace the old rentals file with the updated temp file
+        if (inputFile.delete()) {
+            tempFile.renameTo(inputFile);
+        }
+    }
 }

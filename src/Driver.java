@@ -4,12 +4,18 @@ public class Driver {
     public static void main(String[] args) {
 
 
-        /// add another fild to the rent file , ther should be three types of dates current rent date, expected rturn, actual return date
-        /// fix the search method not getting the available bikes
+        /// get milage and update
+        /// get rates perday for that car
+        /// update vehicle status 
+        /// update rental records
+        ///create the reciept
+        /// 
         Rental r = new Rental();
 
         //r.validatePlateInRentals("7752b0");
-        r.returnVehicle();
+        //r.returnVehicle();
+        //r.updateRentalRecord("7752bi", "Returned");
+        //r.viewMyRentals("Shamar bennett");
 
 
 
@@ -17,7 +23,7 @@ public class Driver {
 
 
    
-       /*  Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -116,5 +122,5 @@ public class Driver {
 
         } while (viewChoice != 6);
     }
-*/
-}}
+
+}
