@@ -8,7 +8,8 @@ public class Driver {
         /// fix the search method not getting the available bikes
         Rental r = new Rental();
 
-        r.validatePlateInRentals("7752b0");
+        //r.validatePlateInRentals("7752b0");
+        r.returnVehicle();
 
 
 

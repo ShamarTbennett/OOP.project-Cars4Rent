@@ -580,13 +580,23 @@ public class Rental extends Vehicle {
 
 
 
-    public void returnVehicle(Scanner input) {
+    public void returnVehicle() {
+        Scanner input = new Scanner(System.in);
+        LocalDate returnedDate = LocalDate.now();
+
         System.out.print("Enter your license plate number: ");
         String license = input.nextLine().trim();
         validatePlateInRentals(license);
-    
-    }
 
+        System.out.println("Actual Return Date: " + returnedDate);
+    
+        System.out.print("Enter current mileage: ");
+        int currentMileage = input.nextInt();
+        input.nextLine();
+
+        
+        input.close();
+    }
 
     public boolean validatePlateInRentals(String plateNumber) {
        
