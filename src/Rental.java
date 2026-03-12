@@ -580,6 +580,12 @@ public class Rental extends Vehicle {
 
 
 
+    public void returnVehicle(Scanner input) {
+        System.out.print("Enter your license plate number: ");
+        String license = input.nextLine().trim();
+        validatePlateInRentals(license);
+    
+    }
 
 
     public boolean validatePlateInRentals(String plateNumber) {
@@ -601,7 +607,7 @@ public class Rental extends Vehicle {
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("MyRentals.txt not found.");
+            System.out.println("RentalRecords.txt not found.");
         }
 
         System.out.println("Plate number not found in your rentals.");

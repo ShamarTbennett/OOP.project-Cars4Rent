@@ -7,8 +7,16 @@ public class Driver {
         /// add another fild to the rent file , ther should be three types of dates current rent date, expected rturn, actual return date
         /// fix the search method not getting the available bikes
         Rental r = new Rental();
+
+        r.validatePlateInRentals("7752b0");
+
+
+
+
+
+
    
-        Scanner scanner = new Scanner(System.in);
+       /*  Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -107,5 +115,5 @@ public class Driver {
 
         } while (viewChoice != 6);
     }
-
-}
+*/
+}}
