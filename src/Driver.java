@@ -15,11 +15,12 @@ public class Driver {
         Rental r = new Rental();
 
         //r.validatePlateInRentals("7752b0");
-        //r.returnVehicle();
+        r.returnVehicle();
         //r.updateRentalRecord("7752bi", "Returned");
         //r.viewMyRentals("Shamar bennett");
 
-        Scanner scanner = new Scanner(System.in);
+        
+       /* Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -116,7 +117,7 @@ public class Driver {
                     System.out.println("\nInvalid selection.");
             }
 
-        } while (viewChoice != 6);
+        } while (viewChoice != 6);*/
     }
 
 }
