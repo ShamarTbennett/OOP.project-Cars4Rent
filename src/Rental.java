@@ -511,6 +511,7 @@ public class Rental extends Vehicle {
     }
 
     
+    
     public void viewMyRentals(String customerName) {
 
         boolean found = false;
