@@ -29,6 +29,7 @@ Cars4Rent is a full-featured rental management application built using object-or
 
 ## Architecture
 
+
 ### Class Hierarchy
 ```
 Vehicle (Base Class)
