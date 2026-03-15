@@ -39,6 +39,7 @@ Vehicle (Base Class)
 └── Rental
 ```
 
+
 ### Core Classes
 
 #### Vehicle.java
