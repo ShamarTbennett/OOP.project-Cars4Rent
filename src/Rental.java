@@ -581,74 +581,74 @@ public class Rental extends Vehicle {
 
     public void viewMyRentals(String customerName) {
 
-    boolean found = false;
-    int totalRentals = 0;
-    int activeRentals = 0;
-    int returnedRentals = 0;
+        boolean found = false;
+        int totalRentals = 0;
+        int activeRentals = 0;
+        int returnedRentals = 0;
 
-    try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
+        try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
 
-        System.out.println("Plate\tName\t\tAddress\t\tPhone\t\tDate Rented\tReturn Date\tDeposit\tStatus");
-        System.out.println("------------------------------------------------------------------------------------------------");
+            System.out.println("Plate\tName\t\tAddress\t\tPhone\t\tDate Rented\tReturn Date\tDeposit\tStatus");
+            System.out.println("------------------------------------------------------------------------------------------------");
 
-        while (reader.hasNextLine()) {
+            while (reader.hasNextLine()) {
 
-            String line = reader.nextLine().trim();
-            if (line.isEmpty()) continue;
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
 
-            String[] parts = line.split("\\s+");
+                String[] parts = line.split("\\s+");
 
-            if (parts.length < 9) continue;
+                if (parts.length < 9) continue;
 
-            String plate = parts[0];
-            String name = parts[1] + " " + parts[2];
-            String address = parts[3] + " " + parts[4];
-            String phone = parts[5];
-            String dateRented = parts[6];
-            String returnDate = parts[7];
-            String deposit = parts[8];
-            String status = parts[9];
+                String plate = parts[0];
+                String name = parts[1] + " " + parts[2];
+                String address = parts[3] + " " + parts[4];
+                String phone = parts[5];
+                String dateRented = parts[6];
+                String returnDate = parts[7];
+                String deposit = parts[8];
+                String status = parts[9];
 
-            if (name.toLowerCase().contains(customerName.toLowerCase())) {
+                if (name.toLowerCase().contains(customerName.toLowerCase())) {
 
-                System.out.println(
-                        plate + "\t" +
-                        name + "\t" +
-                        address + "\t" +
-                        phone + "\t" +
-                        dateRented + "\t" +
-                        returnDate + "\t" +
-                        deposit + "\t" +
-                        status
-                );
+                    System.out.println(
+                            plate + "\t" +
+                            name + "\t" +
+                            address + "\t" +
+                            phone + "\t" +
+                            dateRented + "\t" +
+                            returnDate + "\t" +
+                            deposit + "\t" +
+                            status
+                    );
 
-                totalRentals++;
+                    totalRentals++;
 
-                if (status.equalsIgnoreCase("Active")) {
-                    activeRentals++;
+                    if (status.equalsIgnoreCase("Active")) {
+                        activeRentals++;
+                    }
+                    else if (status.equalsIgnoreCase("Returned")) {
+                        returnedRentals++;
+                    }
+
+                    found = true;
                 }
-                else if (status.equalsIgnoreCase("Returned")) {
-                    returnedRentals++;
-                }
-
-                found = true;
             }
-        }
 
-        if (!found) {
-            System.out.println("No rentals found for: " + customerName);
-        }
-        else {
-            System.out.println("\n------ Rental Summary ------");
-            System.out.println("Total Rentals: " + totalRentals);
-            System.out.println("Active Rentals: " + activeRentals);
-            System.out.println("Returned Rentals: " + returnedRentals);
-        }
+            if (!found) {
+                System.out.println("No rentals found for: " + customerName);
+            }
+            else {
+                System.out.println("\n------ Rental Summary ------");
+                System.out.println("Total Rentals: " + totalRentals);
+                System.out.println("Active Rentals: " + activeRentals);
+                System.out.println("Returned Rentals: " + returnedRentals);
+            }
 
-    } catch (FileNotFoundException e) {
-        System.out.println("RentalRecords.txt not found.");
+        } catch (FileNotFoundException e) {
+            System.out.println("RentalRecords.txt not found.");
+        }
     }
-}
 
     public void returnVehicle() {
         Scanner input = new Scanner(System.in);
