@@ -614,6 +614,7 @@ public class Rental extends Vehicle {
         //input.nextLine();
 
         updateRentalRecord(license, "Returned");
+        updateVehicleStatus2(license, "Available");
 
         input.close();
     }
@@ -685,11 +686,12 @@ public class Rental extends Vehicle {
             tempFile.renameTo(inputFile);
         }
     }
-}
 
-    /*public void updateRentalRecord(String licenseNumber, String newStatus) {
-        File inputFile = new File("RentalRecords.txt");
-        File tempFile = new File("TempRentals.txt");
+
+    public void updateVehicleStatus2(String licenseNumber, String newStatus) {
+
+        File inputFile = new File("Vehicle.txt");
+        File tempFile = new File("TempVehicle.txt");
 
         try (Scanner reader = new Scanner(inputFile);
             PrintWriter writer = new PrintWriter(tempFile)) {
@@ -700,33 +702,35 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] parts = line.split("\\s+");
+                String[] p = line.split("\\t+"); 
 
-                // License number is assumed to be the first field
-                if (parts[0].equalsIgnoreCase(licenseNumber)) {
-                    // Update the rental status (assume last field is status)
-                    parts[parts.length - 1] = newStatus;
+                if (p[0].equalsIgnoreCase(licenseNumber.trim())) {
+                    p[p.length - 1] = newStatus;
                     updated = true;
-                    System.out.println("Rental record updated successfully.");
+                    System.out.println("Vehicle status updated.");
                 }
 
-                // Rebuild the line and write to temp file
-                String updatedLine = String.join(" ", parts);
-                writer.println(updatedLine);
+                writer.println(String.join("\t", p));
             }
 
             if (!updated) {
-                System.out.println("License number not found in rental records.");
+                System.out.println("Vehicle not found.");
             }
 
         } catch (Exception e) {
-            System.out.println("Error updating rental records.");
+            System.out.println("Error updating vehicle status.");
             e.printStackTrace();
             return;
         }
-
-        // Replace the old rentals file with the updated temp file
         if (inputFile.delete()) {
             tempFile.renameTo(inputFile);
         }
-    }*/
+    }
+
+
+
+
+
+    
+
+}
