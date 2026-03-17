@@ -702,7 +702,7 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] p = line.split("\\t+"); 
+                String[] p = line.split("\\s+"); 
 
                 if (p[0].equalsIgnoreCase(licenseNumber.trim())) {
                     p[p.length - 1] = newStatus;

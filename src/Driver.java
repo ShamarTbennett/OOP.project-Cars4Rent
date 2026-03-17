@@ -8,7 +8,6 @@ public class Driver {
 
         /// get milage and update
         /// get rates perday for that car
-        /// update vehicle status and milage
         ///create the reciept
         /// 
         Rental r = new Rental();
