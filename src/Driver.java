@@ -14,12 +14,12 @@ public class Driver {
 
 
         //r.validatePlateInRentals("7752b0");
-        r.returnVehicle();
+        //r.returnVehicle();
         //r.updateRentalRecord("7752bi", "Returned");
         //r.viewMyRentals("Shamar bennett");
 
         
-       /* Scanner scanner = new Scanner(System.in);
+      /*Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
