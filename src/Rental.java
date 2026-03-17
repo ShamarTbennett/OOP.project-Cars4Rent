@@ -589,11 +589,11 @@ public class Rental extends Vehicle {
     public void returnVehicle() {
         Scanner input = new Scanner(System.in);
         LocalDate returnedDate = LocalDate.now();
-
+        String license;
         while (true) {
 
             System.out.print("Enter your license plate number (or type 'exit' to cancel): ");
-            String license = input.nextLine().trim();
+            license = input.nextLine().trim();
 
             if (license.equalsIgnoreCase("exit")) {
                 System.out.println("Return process cancelled.");
@@ -611,8 +611,9 @@ public class Rental extends Vehicle {
     
         System.out.print("Enter current mileage: ");
         int currentMileage = input.nextInt();
-        input.nextLine();
+        //input.nextLine();
 
+        updateRentalRecord(license, "Returned");
 
         input.close();
     }
@@ -644,6 +645,7 @@ public class Rental extends Vehicle {
     }
 
     public void updateRentalRecord(String licenseNumber, String newStatus) {
+
         File inputFile = new File("RentalRecords.txt");
         File tempFile = new File("TempRentals.txt");
 
@@ -656,7 +658,49 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] parts = line.split("\\t+");
+                String[] parts = line.split("\\t+"); // correct
+
+
+                if (parts[0].equalsIgnoreCase(licenseNumber)) {
+                    parts[parts.length - 1] = newStatus;
+                    updated = true;
+                    System.out.println("Rental record updated successfully.");
+                }
+
+                // preserve tab format
+                writer.println(String.join("\t", parts));
+            }
+
+            if (!updated) {
+                System.out.println("License number not found in rental records.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error updating rental records.");
+            e.printStackTrace();
+            return;
+        }
+
+        if (inputFile.delete()) {
+            tempFile.renameTo(inputFile);
+        }
+    }
+}
+
+    /*public void updateRentalRecord(String licenseNumber, String newStatus) {
+        File inputFile = new File("RentalRecords.txt");
+        File tempFile = new File("TempRentals.txt");
+
+        try (Scanner reader = new Scanner(inputFile);
+            PrintWriter writer = new PrintWriter(tempFile)) {
+
+            boolean updated = false;
+
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] parts = line.split("\\s+");
 
                 // License number is assumed to be the first field
                 if (parts[0].equalsIgnoreCase(licenseNumber)) {
@@ -685,5 +729,4 @@ public class Rental extends Vehicle {
         if (inputFile.delete()) {
             tempFile.renameTo(inputFile);
         }
-    }
-}
+    }*/
