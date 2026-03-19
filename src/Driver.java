@@ -4,16 +4,13 @@ public class Driver {
     public static void main(String[] args) {
 
 
-
-
-        /// get milage and update
         /// get rates perday for that car
         ///create the reciept
         Rental r = new Rental();
 
 
         //r.validatePlateInRentals("7752b0");
-        r.returnVehicle();
+        //r.returnVehicle();
         //r.updateRentalRecord("7752bi", "Returned");
         //r.viewMyRentals("Shamar bennett");
 
