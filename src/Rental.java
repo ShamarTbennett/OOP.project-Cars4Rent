@@ -651,58 +651,7 @@ public class Rental extends Vehicle {
         int currentMileage = input.nextInt();
         input.nextLine(); // 
 
-        // GET RENTAL DETAILS FROM FILE
-        try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
-
-            while (reader.hasNextLine()) {
-                String line = reader.nextLine().trim();
-                if (line.isEmpty()) continue;
-
-                String[] parts = line.split("\\t+");
-
-                if (parts[0].equalsIgnoreCase(license)) {
-
-                    LocalDate borrowedDate = LocalDate.parse(parts[4]);
-                    LocalDate expectedReturn = LocalDate.parse(parts[5]);
-
-                    // Rental days
-                    long rentalDays = ChronoUnit.DAYS.between(borrowedDate, expectedReturn);
-                    if (rentalDays <= 0) rentalDays = 1;
-
-                    // Get rate
-                    int ratePerDay = getRateFromVehicle(license);
-
-                    double deposit = rentalDays * ratePerDay;
-
-                    // Late fee
-                    long daysLate = ChronoUnit.DAYS.between(expectedReturn, returnedDate);
-                    double lateFee = (daysLate > 0) ? daysLate * 2500 : 0;
-
-                    double finalCost = deposit + lateFee;
-
-                    // ✅ RECEIPT
-                    System.out.println("\n=========== RECEIPT ===========");
-                    System.out.println("License Plate: " + license);
-                    System.out.println("Date Borrowed: " + borrowedDate);
-                    System.out.println("Expected Return: " + expectedReturn);
-                    System.out.println("Actual Return: " + returnedDate);
-                    System.out.println("--------------------------------");
-                    System.out.println("Rental Days: " + rentalDays);
-                    System.out.println("Rate per Day: $" + ratePerDay);
-                    System.out.println("Deposit: $" + deposit);
-                    System.out.println("Late Days: " + (daysLate > 0 ? daysLate : 0));
-                    System.out.println("Late Fee: $" + lateFee);
-                    System.out.println("--------------------------------");
-                    System.out.println("Final Cost: $" + finalCost);
-                    System.out.println("================================\n");
-
-                    break;
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error reading rental data.");
-        }
+        
 
         //UPDATE FILES
         updateRentalRecord(license, "Returned");
