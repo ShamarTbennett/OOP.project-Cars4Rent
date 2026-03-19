@@ -801,22 +801,8 @@ public class Rental extends Vehicle {
                     double finalCost = deposit + lateFee;
 
 
-                   
-                    System.out.println("\n=========== RECEIPT ===========");
-                    System.out.println("License Plate: " + license);
-                    System.out.println("Date Borrowed: " + borrowedDate);
-                    System.out.println("Expected Return: " + expectedReturn);
-                    System.out.println("Actual Return: " + returnedDate);
-                    System.out.println("--------------------------------");
-                    System.out.println("Rental Days: " + rentalDays);
-                    System.out.println("Rate per Day: $" + ratePerDay);
-                    System.out.println("Deposit: $" + deposit);
-                    System.out.println("Late Days: " + (daysLate > 0 ? daysLate : 0));
-                    System.out.println("Late Fee: $" + lateFee);
-                    System.out.println("--------------------------------");
-                    System.out.println("Final Cost: $" + finalCost);
-                    System.out.println("================================\n");
-
+                printReceipt(license, borrowedDate , expectedReturn,returnedDate, rentalDays, 
+                              ratePerDay, deposit, daysLate , lateFee, finalCost );
                     return; // stop after found
                 }
             }
@@ -829,10 +815,25 @@ public class Rental extends Vehicle {
         }
     }
     
-    public void printReceipt(){
+     public void printReceipt(String license, LocalDate borrowedDate ,LocalDate expectedReturn, LocalDate returnedDate, long rentalDays,
+                int ratePerDay, double deposit, long daysLate , double lateFee, double finalCost ){
 
+            System.out.println("\n=========== RECEIPT ===========");
+            System.out.println("License Plate: " + license);
+            System.out.println("Date Borrowed: " + borrowedDate);
+            System.out.println("Expected Return: " + expectedReturn);
+            System.out.println("Actual Return: " + returnedDate);
+            System.out.println("--------------------------------");
+            System.out.println("Rental Days: " + rentalDays);
+            System.out.println("Rate per Day: $" + ratePerDay);
+            System.out.println("Deposit: $" + deposit);
+            System.out.println("Late Days: " + (daysLate > 0 ? daysLate : 0));
+            System.out.println("Late Fee: $" + lateFee);
+            System.out.println("--------------------------------");
+            System.out.println("Final Cost: $" + finalCost);
+            System.out.println("================================\n");
     }
-    
+
     public int getRateFromVehicle(String licenseNumber) {
 
         try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
