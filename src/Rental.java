@@ -275,9 +275,8 @@ public class Rental extends Vehicle {
         if (inputFile.delete()) {
             tempFile.renameTo(inputFile);
         }
-    }
-   
-
+    } 
+    
     public void saveRentalRecord(String licensePlate, String customerName,
                                 String address, String phone,
                                 String dateRented, String expectedReturn,
@@ -307,7 +306,6 @@ public class Rental extends Vehicle {
             System.out.println("Could not save rental record");
         }
     }
-
 
     public void getRentalInformation() {
 
@@ -435,7 +433,6 @@ public class Rental extends Vehicle {
         return;
     }
       
-
     public boolean canRentMoreVehicles(String customerName) {
 
         int rentalCount = 0;
@@ -478,7 +475,6 @@ public class Rental extends Vehicle {
         return true;
     }
 
-
     public boolean validatePlateAvailable(String plateNumber) {
 
         try (Scanner reader = new Scanner(new File("Vehicle.txt"))) {
@@ -510,7 +506,6 @@ public class Rental extends Vehicle {
         System.out.println("Plate number does not exist.");
         return false;
     }
-
 
     public void viewMyRentals(String customerName) {
 
@@ -584,45 +579,6 @@ public class Rental extends Vehicle {
     }
 
 
-
-    /*public void returnVehicle() {
-        Scanner input = new Scanner(System.in);
-        LocalDate returnedDate = LocalDate.now();
-        String license;
-        while (true) {
-
-            System.out.print("Enter your license plate number (or type 'exit' to cancel): ");
-            license = input.nextLine().trim();
-
-            if (license.equalsIgnoreCase("exit")) {
-                System.out.println("Return process cancelled.");
-                return;
-            }
-
-            if (validatePlateInRentals(license)) {
-                break; // correct plate found
-            }
-
-            System.out.println("Invalid plate number. Please try again.");
-        }
-
-        System.out.println("Actual Return Date: " + returnedDate);
-    
-        System.out.print("Enter current mileage: ");
-        int currentMileage = input.nextInt();
-        //input.nextLine();
-
-        updateRentalRecord(license, "Returned");
-        updateVehicleStatus2(license, "Available");
-        updateVehicleMileage(license, currentMileage);
-
-        input.close();
-    }
-*/
-
-
-
-
     public void returnVehicle(Scanner input) {
 
         LocalDate returnedDate = LocalDate.now();
@@ -660,8 +616,6 @@ public class Rental extends Vehicle {
 
         System.out.println("Vehicle returned successfully!");
     }
-
-
 
     public boolean validatePlateInRentals(String plateNumber) {
        

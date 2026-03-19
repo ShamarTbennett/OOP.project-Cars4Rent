@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.util.Scanner;
 public class Driver {
     
@@ -18,7 +18,7 @@ public class Driver {
         //r.viewMyRentals("Shamar bennett");
 
         
-      /*Scanner scanner = new Scanner(System.in);
+      Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -116,7 +116,7 @@ public class Driver {
                     System.out.println("\nInvalid selection.");
             }
 
-        } while (viewChoice != 6);*/
+        } while (viewChoice != 6);
     }
 
 }
