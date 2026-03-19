@@ -615,6 +615,7 @@ public class Rental extends Vehicle {
 
         updateRentalRecord(license, "Returned");
         updateVehicleStatus2(license, "Available");
+        updateVehicleMileage(license, currentMileage);
 
         input.close();
     }
