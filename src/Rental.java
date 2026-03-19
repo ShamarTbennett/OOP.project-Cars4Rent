@@ -619,6 +619,7 @@ public class Rental extends Vehicle {
         input.close();
     }
 
+    
     public boolean validatePlateInRentals(String plateNumber) {
        
         File rentalsFile = new File("RentalRecords.txt");
@@ -686,7 +687,6 @@ public class Rental extends Vehicle {
             tempFile.renameTo(inputFile);
         }
     }
-
 
     public void updateVehicleStatus2(String licenseNumber, String newStatus) {
 
