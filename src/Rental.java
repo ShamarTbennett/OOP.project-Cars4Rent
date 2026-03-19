@@ -619,7 +619,7 @@ public class Rental extends Vehicle {
         input.close();
     }
 
-    
+
     public boolean validatePlateInRentals(String plateNumber) {
        
         File rentalsFile = new File("RentalRecords.txt");
@@ -727,6 +727,46 @@ public class Rental extends Vehicle {
         }
     }
 
+    public void updateVehicleMileage(String licenseNumber, int newMileage) {
+
+        File inputFile = new File("Vehicle.txt");
+        File tempFile = new File("TempVehicle.txt");
+
+        try (Scanner reader = new Scanner(inputFile);
+            PrintWriter writer = new PrintWriter(tempFile)) {
+
+            boolean updated = false;
+
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                String[] p = line.split("\\t+"); // ✅ SPLIT BY TABS
+
+                if (p[0].equalsIgnoreCase(licenseNumber.trim())) {
+
+                    p[9] = String.valueOf(newMileage); // mileage index
+                    updated = true;
+                    System.out.println("Vehicle mileage updated.");
+                }
+
+                writer.println(String.join("\t", p)); // ✅ KEEP TABS
+            }
+
+            if (!updated) {
+                System.out.println("Vehicle not found.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error updating vehicle mileage.");
+            e.printStackTrace();
+            return;
+        }
+
+        if (inputFile.delete()) {
+            tempFile.renameTo(inputFile);
+        }
+    }
 
 
 
