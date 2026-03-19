@@ -801,7 +801,7 @@ public class Rental extends Vehicle {
                     double finalCost = deposit + lateFee;
 
 
-                    // ✅ RECEIPT
+                   
                     System.out.println("\n=========== RECEIPT ===========");
                     System.out.println("License Plate: " + license);
                     System.out.println("Date Borrowed: " + borrowedDate);
@@ -827,6 +827,10 @@ public class Rental extends Vehicle {
             System.out.println("Error generating receipt.");
             e.printStackTrace();
         }
+    }
+    
+    public void printReceipt(){
+
     }
     
     public int getRateFromVehicle(String licenseNumber) {
