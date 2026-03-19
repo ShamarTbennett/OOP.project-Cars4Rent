@@ -5,18 +5,8 @@ public class Driver {
     public static void main(String[] args) {
 
 
-        /// get rates perday for that car
-        ///create the reciept
+        ///create a print method instaed of printing inside the receipt method 
         Rental r = new Rental();
-
-        //LocalDate returnedDate = LocalDate.now();
-        //r.generateReceipt("8638hs", LocalDate.now());
-
-        //r.validatePlateInRentals("7752b0");
-        //r.returnVehicle(null);
-        //r.updateRentalRecord("7752bi", "Returned");
-        //r.viewMyRentals("Shamar bennett");
-
         
       Scanner scanner = new Scanner(System.in);
         int choice;
