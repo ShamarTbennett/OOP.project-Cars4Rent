@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 public class Driver {
     
@@ -8,6 +9,8 @@ public class Driver {
         ///create the reciept
         Rental r = new Rental();
 
+        //LocalDate returnedDate = LocalDate.now();
+        //r.generateReceipt("8638hs", LocalDate.now());
 
         //r.validatePlateInRentals("7752b0");
         //r.returnVehicle(null);
@@ -15,7 +18,7 @@ public class Driver {
         //r.viewMyRentals("Shamar bennett");
 
         
-      Scanner scanner = new Scanner(System.in);
+      /*Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -113,7 +116,7 @@ public class Driver {
                     System.out.println("\nInvalid selection.");
             }
 
-        } while (viewChoice != 6);
+        } while (viewChoice != 6);*/
     }
 
 }
