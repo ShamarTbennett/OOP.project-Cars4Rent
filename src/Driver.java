@@ -98,7 +98,7 @@ public class Driver {
                     break;
                 case 5:
                     Rental r = new Rental();
-                    r.getRentalInformation();
+                    r.getRentalInformation(scanner);
                 case 6:
                     System.out.println("\nReturning to Main Menu...");
                     break;

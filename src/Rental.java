@@ -62,7 +62,7 @@ public class Rental extends Vehicle {
                 this.seatCapacity = Integer.parseInt(p[i++]);
                 this.ratesPerday = Integer.parseInt(p[i++]);
 
-                // RESET OPTIONAL FIELDS
+                
                 this.towingCapacity = 0;
                 this.numberOfHelmets = 0;
                 this.interiortype = "None";
@@ -153,7 +153,7 @@ public class Rental extends Vehicle {
                     v.numberOfHelmets = Integer.parseInt(p[i++]);
                 }
 
-                // ✅ SAFE rental status read
+                
                 if (i >= p.length) continue;
                 v.rentalStatus = p[i];
 
@@ -169,7 +169,7 @@ public class Rental extends Vehicle {
                 if (match) {
                     v.Display();
                     System.out.println("--------------------------------------------------------------------------------------------------" +
-                                    "-----------------------------------------------------------------------------------------------------");
+                                    "---------------------------------------------------------------------------------------------");
                     found = true;
                 }
             }
@@ -286,7 +286,7 @@ public class Rental extends Vehicle {
 
             FileWriter instream = new FileWriter("RentalRecords.txt", true);
 
-            String status = "Active";   // ✅ default when renting
+            String status = "Active"; 
 
             String rental = licensePlate + "\t\t" +
                             customerName + "\t\t" +
@@ -307,9 +307,7 @@ public class Rental extends Vehicle {
         }
     }
 
-    public void getRentalInformation() {
-
-        Scanner scan = new Scanner(System.in);
+    public void getRentalInformation(Scanner scan) {
 
         String plate;
         String name;
@@ -351,7 +349,7 @@ public class Rental extends Vehicle {
             //  Check rental limit AFTER validating name
             if (!canRentMoreVehicles(name)) {
                 System.out.println("Rental limit reached. Cannot proceed.");
-                return; // or break depending on your structure
+                return;
             }
             break;
         }
@@ -399,7 +397,8 @@ public class Rental extends Vehicle {
         while (true) {
             try {
                 System.out.print("Deposit amount: ");
-                depositPaid = scan.nextInt();
+                depositPaid =  scan.nextDouble();
+                scan.nextInt();
 
                 if (depositPaid <= 0) {
                     System.out.println("Deposit must be greater than 0.");
@@ -412,7 +411,7 @@ public class Rental extends Vehicle {
                 scan.next(); // clear invalid input
             }
         }
-        scan.close();
+        
         System.out.println("\nRental Information Captured Successfully.");
 
         // Save rental record
@@ -444,7 +443,7 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                // 🔥 Correct split for TAB-separated file
+                
                 String[] parts = line.split("\\t+");
 
                 // Safety check
@@ -577,6 +576,7 @@ public class Rental extends Vehicle {
             System.out.println("RentalRecords.txt not found.");
         }
     }
+
 
 
     public void returnVehicle(Scanner input) {
@@ -815,7 +815,7 @@ public class Rental extends Vehicle {
         }
     }
     
-     public void printReceipt(String license, LocalDate borrowedDate ,LocalDate expectedReturn, LocalDate returnedDate, long rentalDays,
+    public void printReceipt(String license, LocalDate borrowedDate ,LocalDate expectedReturn, LocalDate returnedDate, long rentalDays,
                 int ratePerDay, double deposit, long daysLate , double lateFee, double finalCost ){
 
             System.out.println("\n=========== RECEIPT ===========");
