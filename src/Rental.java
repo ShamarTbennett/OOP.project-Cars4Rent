@@ -289,7 +289,7 @@ public class Rental extends Vehicle {
 
             String status = "Active"; 
 
-            String rental = licensePlate + "\t\t" +
+            String rental = licensePlate + "\t" +
                             customerName + "\t\t" +
                             address + "\t\t" +
                             phone + "\t\t" +
