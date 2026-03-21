@@ -104,7 +104,7 @@ public class Rental extends Vehicle {
     }
 
 
-    public void searchAvailableVehicles(String userInput) {
+    public void searchAvailableVehicles(String userInput, Scanner scan) {
 
         String search = userInput.trim().toLowerCase();
         boolean found = false;
@@ -188,7 +188,7 @@ public class Rental extends Vehicle {
 
                     switch (choice) {
                         case 1:
-                            getRentalInformation();
+                           getRentalInformation( scan);
                             break;
                         case 2:
                             return;
@@ -398,7 +398,7 @@ public class Rental extends Vehicle {
             try {
                 System.out.print("Deposit amount: ");
                 depositPaid =  scan.nextDouble();
-                scan.nextInt();
+                //scan.nextInt();
 
                 if (depositPaid <= 0) {
                     System.out.println("Deposit must be greater than 0.");

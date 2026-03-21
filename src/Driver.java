@@ -37,7 +37,7 @@ public class Driver {
                     System.out.println();
                     System.out.println("Enter car detail: ");
                     String detail = scanner.next();
-                    r.searchAvailableVehicles(detail);
+                    r.searchAvailableVehicles(detail, scanner);
                     break;
 
                 case 4:
