@@ -31,7 +31,7 @@ public class Driver {
                     System.out.println();
                     System.out.println("Enter your name: ");
                     String name = scanner.next();
-                    r.viewMyRentals(name);
+                    r.viewMyRentals(name, scanner);
                     break;
                 case 3:
                     System.out.println();

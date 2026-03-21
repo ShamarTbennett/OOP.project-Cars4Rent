@@ -506,7 +506,7 @@ public class Rental extends Vehicle {
         return false;
     }
 
-    public void viewMyRentals(String customerName) {
+    public void viewMyRentals(String customerName, Scanner scan) {
 
         boolean found = false;
         int totalRentals = 0;
