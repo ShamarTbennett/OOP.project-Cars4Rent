@@ -276,7 +276,8 @@ public class Rental extends Vehicle {
             tempFile.renameTo(inputFile);
         }
     } 
-    
+ 
+        
     public void saveRentalRecord(String licensePlate, String customerName,
                                 String address, String phone,
                                 String dateRented, String expectedReturn,
@@ -431,29 +432,21 @@ public class Rental extends Vehicle {
         System.out.println("\nVehicle successfully rented.");
         return;
     }
-      
+    
     public boolean canRentMoreVehicles(String customerName) {
-
         int rentalCount = 0;
 
         try (Scanner reader = new Scanner(new File("RentalRecords.txt"))) {
-
             while (reader.hasNextLine()) {
-
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                
                 String[] parts = line.split("\\t+");
 
-                // Safety check
-                if (parts.length < 8) {
-                    System.out.println("Skipping malformed line: " + line);
-                    continue;
-                }
+                if (parts.length < 10) continue;
 
-                String nameFromFile = parts[1].trim();
-                String status = parts[7].trim();
+                String nameFromFile = (parts[1] + " " + parts[2]).trim();
+                String status = parts[9].trim(); 
 
                 if (nameFromFile.equalsIgnoreCase(customerName)
                         && status.equalsIgnoreCase("Active")) {
@@ -466,6 +459,7 @@ public class Rental extends Vehicle {
         }
 
         if (rentalCount >= 3) {
+            System.out.println();
             System.out.println("You already have " + rentalCount + " active rentals.");
             System.out.println("You cannot rent more than 3 vehicles at a time.");
             return false;
@@ -576,6 +570,9 @@ public class Rental extends Vehicle {
             System.out.println("RentalRecords.txt not found.");
         }
     }
+
+
+
 
 
 
