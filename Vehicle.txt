@@ -8,7 +8,7 @@
 3705FN Truck Nissan Navara 2018 Black 2.3 Gas A 25368 3 22000 3500 Silk Rented
 8594HE Truck Volkswagen Amarok 2019 Silver 2.0 Diesel M 13512 5 38000 1154 Silk Available
 7669BU Truck Honda Ridgeline 2017 Black 3.5 Gas A 17821 5 40000 2267 Silk Available
-7950HI Bike Yamaha YZFR1 2018 Blue 1.0 Gas M 3532 2 7000 1 Available
+7950HI Bike Yamaha YZFR1 2018 Blue 1.0 Gas M 3532 2 7000 1 Rented
 7752BI Bike Kawasaki Ninja300 2018 Red 0.3 Gas M 152 2 12000 1 Rented
 2853ER Bike Ducati Monster821 2017 Red 0.15 Gas M 34512 2 5000 2 Rented
 1583CD Bike Suzuki SV650X 2018 Silver 0.65 Gas M 23516 2 9000 2 Available

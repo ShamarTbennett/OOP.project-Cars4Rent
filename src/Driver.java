@@ -6,11 +6,13 @@ public class Driver {
     public static void main(String[] args) {
 
         
+        //the view my rentals keep crashing fix
+
         Rental r = new Rental();
         LocalDate date = LocalDate.now();
-        r.generateReceipt("1416JG", date  );
+        //r.generateReceipt("1416JG", date  );
         
-      /*Scanner scanner = new Scanner(System.in);
+      Scanner scanner = new Scanner(System.in);
         int choice;
 
         do {
@@ -108,7 +110,7 @@ public class Driver {
                     System.out.println("\nInvalid selection.");
             }
 
-        } while (viewChoice != 6);*/
+        } while (viewChoice != 6);
     }
 
 }
