@@ -5,6 +5,7 @@ public class Driver {
     public static void main(String[] args) {
 
 
+
         ///create a print method instaed of printing inside the receipt method 
         Rental r = new Rental();
         
