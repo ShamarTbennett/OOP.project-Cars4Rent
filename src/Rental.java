@@ -789,6 +789,7 @@ public class Rental extends Vehicle {
                     if (rentalDays <= 0) rentalDays = 1;
 
                     int ratePerDay = getRateFromVehicle(license);
+                    System.out.print(ratePerDay);
 
                     double deposit = rentalDays * ratePerDay;
 
@@ -839,7 +840,7 @@ public class Rental extends Vehicle {
                 String line = reader.nextLine().trim();
                 if (line.isEmpty()) continue;
 
-                String[] p = line.split("\\t+");
+                String[] p = line.split("\\s+");
 
                 // Check license match
                 if (p[0].equalsIgnoreCase(licenseNumber.trim())) {
