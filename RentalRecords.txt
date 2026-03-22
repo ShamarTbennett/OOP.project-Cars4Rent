@@ -5,5 +5,5 @@
 4337EB	Shamar	bennett	Main	street	8768806934	2026-03-04	2026-03-06	3000.0	Returned
 3705fn	Damion	Clark	Trafalga	road	8765429831	2026-03-06	2026-03-10	5000.0	Active
 7669bu	Devon	campbell waterloo	lane	8762493185	2026-03-09	2026-03-15	4000.0	Active
-4337eb	shamar bennett		78 pine		54687134592		2026-03-20		2026-03-22		10000.0		Active
-7950hi	Shamar bennett		457 street		213465795214		2026-03-22		2026-03-25		6000.0		Active
+4337eb	shamar bennett	78 pine	54687134592	2026-03-20	2026-03-22	10000.0	Returned
+7950hi	Shamar bennett	457 street	213465795214	2026-03-22	2026-03-25	6000.0	Active

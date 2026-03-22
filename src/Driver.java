@@ -24,8 +24,9 @@ public class Driver {
             System.out.println("4. Return Vehicle"); 
             System.out.println("5. Exit");
             System.out.print("Select an option: ");
-            choice = scanner.nextInt();
-            scanner.nextLine();
+            //choice = scanner.nextInt();
+            //scanner.nextLine();
+            choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -34,13 +35,13 @@ public class Driver {
                 case 2:
                     System.out.println();
                     System.out.println("Enter your name: ");
-                    String name = scanner.next();
+                    String name = scanner.nextLine();
                     r.viewMyRentals(name, scanner);
                     break;
                 case 3:
                     System.out.println();
                     System.out.println("Enter car detail: ");
-                    String detail = scanner.next();
+                    String detail = scanner.nextLine();
                     r.searchAvailableVehicles(detail, scanner);
                     break;
 
