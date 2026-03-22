@@ -5,15 +5,7 @@ public class Driver {
     
     public static void main(String[] args) {
 
-
-<<<<<<< HEAD
-=======
-
-
-
-
-        ///create a print method instaed of printing inside the receipt method 
->>>>>>> b3b250a9214d1b234febec02b49bf47f238212f7
+        
         Rental r = new Rental();
         LocalDate date = LocalDate.now();
         r.generateReceipt("1416JG", date  );
