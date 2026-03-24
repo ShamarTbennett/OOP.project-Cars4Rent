@@ -6,6 +6,7 @@ public class Driver {
 
         
         
+
         //the view my rentals keep crashing fix
 
         Rental r = new Rental();
