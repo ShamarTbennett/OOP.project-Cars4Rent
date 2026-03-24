@@ -5,6 +5,7 @@ public class Driver {
     public static void main(String[] args) {
 
         
+        
         //the view my rentals keep crashing fix
 
         Rental r = new Rental();
