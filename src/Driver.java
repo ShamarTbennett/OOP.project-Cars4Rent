@@ -7,7 +7,6 @@ public class Driver {
         
         
 
-        
 
 
         //the view my rentals keep crashing fix
