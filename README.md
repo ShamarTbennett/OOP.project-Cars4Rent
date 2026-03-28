@@ -10,6 +10,10 @@ Cars4Rent is a Java console application for managing vehicle rentals. It uses ob
 - View a customer's rental history with active and returned counts
 - Return a vehicle, generate a receipt, update mileage, and mark the rental as returned
 
+## Known Issues
+
+- **My Rentals Feature**: The "My Rentals" feature may encounter crashes in certain scenarios. This is under investigation and pending fixes.
+
 ## Main Menu
 
 When `Driver.java` runs, the application shows this menu:
